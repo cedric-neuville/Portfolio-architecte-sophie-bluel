@@ -1,39 +1,51 @@
-//récuperation des logins dans le fichier JSON
-let logins_response = await fetch("http://localhost:5678/api/users/Login");
-let login = await logins_response.json();
-
 const portfolio = document.querySelector('gallery')
-const loginForm = document.getElementById('login')
-const email = document.getElementById('email').value
-const password = document.getElementById('password').value
+const SubmitButton = document.getElementById('selectAll')
+const email = document.getElementById('email')
+const password = document.getElementById('password')
 
-loginForm.addEventListener('submit', async event => 
-    event.preventDefault())
+SubmitButton.addEventListener('click', async (event) =>{ 
+    event.preventDefault()
 
-
-//récupération et enregistrement du token d'authentification
-let UserLoggedIn = true
-if (UserLoggedIn) {
-    const data = await response.json()
-    const token = data.token
-    localStorage.setItem('token', token)
-
-} else {
-    const error = await response.json()
-      let alert = document.querySelector('form')
-      let message = alert.querySelector('#toDelete')
-}
-
-
-if (!message) {
-    message = document.createElement('p')
+    const res = await fetch("http://localhost:5678/api/users/login",{
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            email: email.value,
+            password: password.value
+        })
+    });
+    let message = document.createElement('p')
     message.setAttribute('id', 'toDelete')
-    let locationMessage = alert.firstChild
-    alert.insertBefore(message, locationMessage)
-  }
-  if (response.status === 401) {
-    message.innerText = 'Erreur: E-mail ou Mot de passe invalide'
-  } else {
-    // Sinon, on affiche le message d'erreur renvoyé par le serveur
-    message.innerText = 'Erreur: ' + error.message
-  }
+    message.innerText = ''
+    message.style.color = 'red'
+
+    
+
+    if (!res.ok) {
+            const error = await res.json()
+            message.innerText = 'Erreur dans l\'identifiant ou le mot de passe'
+            document.getElementById('login-form').appendChild(message)              
+    } else {
+            message.innerText = ''
+            const data = await res.json()
+            const token = data.token
+            localStorage.setItem('token', token)
+            window.location.href = './index.html'
+    }
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+

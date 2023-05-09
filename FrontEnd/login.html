@@ -17,8 +17,8 @@
 		<ul>
 			<li><a href="/FrontEnd/index.html#portfolio">Projets</a></li>
 			<li><a href="/FrontEnd/index.html#contact">Contact</a></li>
-			<li id="logoutLink" style="display: none;"><a href="#"">logout</a></li>
-			<li id="loginLink"><a href="/FrontEnd/login.html">>login</a></li>
+			<li id="logoutLink" style="display: none;"><a href="#">logout</a></li>
+			<li id="loginLink"><a href="/FrontEnd/login.html">login</a></li>
 			<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 		</ul>
 	</nav>
@@ -30,8 +30,9 @@
                 <label for="email">E-mail</label>
                 <input type="email" name="email" id="email" required/>
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" required>
+                <input type="password" id="password" minlength="6"size="6" required>
                 <input type="submit" id="selectAll" value="Se connecter"/>
+                <a class="passwordForgot" href="#">Mot de passe oublié</a>
             </form>
         </section>
     </main>
@@ -44,6 +45,6 @@
         </nav>
     </footer>
     
-    <script src="/FrontEnd/js/index.js" type="module"></script>
+    <script src="/FrontEnd/js/login.js" type="module"></script>
     </body>
     </html>
