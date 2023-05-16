@@ -2,6 +2,7 @@
 let works_response = await fetch("http://localhost:5678/api/works");
 let works = await works_response.json();
 
+
 function displayWorks(myWorks) {
   const portfolio = document.querySelector('.gallery')
   portfolio.innerHTML = ""
@@ -23,20 +24,48 @@ function displayWorks(myWorks) {
 displayWorks(works)
 
 
+const loginBanner = document.getElementById("loginBanner")
+const logoutLink = document.querySelector(".logoutLink")
+const modificationArticle = document.getElementById("modificationArticle")
+const modificationProjet = document.getElementById("modificationProjet")
+const modificationPhotoDeProfil = document.getElementById("modificationPhotoDeProfil")
+
+
+    if (sessionStorage.getItem("token")) {
+        
+        logoutLink.textContent = "logout"
+        loginBanner.style.display ="block"
+        modificationArticle.style.display ="block"
+        modificationProjet.style.display ="block"
+        modificationPhotoDeProfil.style.display ="block"
+
+        logoutLink.addEventListener("click", () => {
+            sessionStorage.removeItem("token")
+            window.location.replace("index.html")
+        })
+       
+
+    }else {
+
+    
+
 let categories_response = await fetch("http://localhost:5678/api/categories");
 let categories = await categories_response.json();
 categories.unshift({ id: 0, name: "tous" })
 
 
 
-const divCategories = document.createElement("div");
-divCategories.classList.add("filter");
+const divCategories = document.createElement("div")
+divCategories.classList.add("filter")
+const portfolio = document.querySelector('.gallery')
 portfolio.insertAdjacentElement("beforebegin", divCategories)
 
 categories.forEach(category => {
   const categoryButton = document.createElement('button')
   categoryButton.innerText = category.name
   categoryButton.classList.add('button-style')
+ 
+
 
   // On ajoute la classe "active" au bouton "Tous" (id: 0 étant "Tous")
   if (category.id === 0) {
@@ -59,5 +88,5 @@ categories.forEach(category => {
 
   })
   divCategories.appendChild(categoryButton)
-});
-
+})
+}

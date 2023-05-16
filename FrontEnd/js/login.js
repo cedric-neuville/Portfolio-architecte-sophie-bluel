@@ -2,6 +2,10 @@ const portfolio = document.querySelector('gallery')
 const SubmitButton = document.getElementById('selectAll')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
+let message = document.createElement('p')
+
+
+
 
 SubmitButton.addEventListener('click', async (event) =>{ 
     event.preventDefault()
@@ -16,12 +20,10 @@ SubmitButton.addEventListener('click', async (event) =>{
             password: password.value
         })
     });
-    let message = document.createElement('p')
+   
     message.setAttribute('id', 'toDelete')
     message.innerText = ''
     message.style.color = 'red'
-
-    
 
     if (!res.ok) {
             const error = await res.json()
@@ -31,7 +33,7 @@ SubmitButton.addEventListener('click', async (event) =>{
             message.innerText = ''
             const data = await res.json()
             const token = data.token
-            localStorage.setItem('token', token)
+            sessionStorage.setItem('token', token)
             window.location.href = './index.html'
     }
 })

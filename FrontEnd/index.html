@@ -9,20 +9,26 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
 		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<title>la Modale</title>
 </head>
 
 <body>
+	<div id="loginBanner" class="">
+		<img id="loginBannerIcon" src=".">
+		<h3>Mode edition</h3>
+		<button id="editionButton">publier les changements</button>
+	</div>
 	<header>
-		<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
-		<nav>
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<nav id="navBar">
 			<ul>
 				<li>  <a href="#portfolio" class="portfolio-link">projets</a></li>
 				<li>  <a href="#contact" class="contact-link">contact</a></li>
-				<li id="logoutLink" style="display: none;"><a href="#">logout</a></li>
-				<li>  <a href="/FrontEnd/login.html">login</a></li>
+				<!--<li id="logoutLink" style="display: none;"><a href="#">logout</a></li>-->
+				<li>  <a href="/FrontEnd/login.html" class="logoutLink">login</a></li>
 				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
 			</ul>
 		</nav>
@@ -31,8 +37,10 @@
 		<section id="introduction">
 			<figure>
 				<img src="./assets/images/sophie-bluel.png" alt="">
+				<div id="modificationPhotoDeProfil"><i class="fa fa-edit"></i> modifier</div>
 			</figure>
 			<article>
+				<a id="modificationArticle"><i class="fa fa-edit"></i> modifier</a>
 				<h2>Designer d'espace</h2>
 				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
 					finale du chantier.</p>
@@ -45,6 +53,7 @@
 		</section>
 		<section id="portfolio">
 			<h2>Mes Projets</h2>
+				<a id="modificationProjet"><i class="fa fa-edit"></i> modifier</a>
 			<div class="gallery"></div>
 		</section>
 		<section id="contact">
