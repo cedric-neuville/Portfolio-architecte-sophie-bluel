@@ -12,7 +12,7 @@
 </head>
 <body>
 <header>
-	<h1>Sophie Bluel <span>Architecte d'inteérieur</span></h1>
+	<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
 	<nav id="navBar">
 		<ul>
 			<li><a href="/FrontEnd/index.html#portfolio">Projets</a></li>
@@ -44,6 +44,35 @@
             </ul>
         </nav>
     </footer>
+
+    <aside id="ModalMain">
+        <div id="overlay">.</div>
+        <div id="modalMaincontent">.</div>
+            <div id="galleryModalContent">
+                <div id="galleryModal"></div>
+                <a class="closeModal">&times;</a>
+                <h3>Galerie photo</h3>
+                <div class BorderOfModal></div>
+                <button id="addPhotoModalBtn">Ajouter une photo</button>
+                <a href="#" id="deleteGallery">Supprimer la galerie</a>
+            </div>
+            <div id="AddPhotoModal">
+                <a href="galleryModalContent" id="goBack"><img src="./assets/icons/Arrow_Back.png"></a>
+                <a href="" class="closeModal">&times;</a>
+                <h3>Ajout photo</h3>
+                <form id="AddWorkForm">
+                    <div id="addPhoto">
+                        <img id="addphotoIcon" src="./assets/icons/addPhoto.png" alt="">
+                        <input type="file" id="addPhotoBtn" name="image" accept="image/pnj, image/jpeg" required>
+                        <p id="addPhotoDescription">jpg,png : 4mo max</p>
+                    </div>
+                    <label for="titleOfProject">Titre</label>
+                    <select id="categoryOfProject" name="category" required> <option selected value=""></option></select>
+                    <input type="submit" id="projectSubmit" value="valider">
+                </form>
+            </div>
+        </div>
+    </aside>
     
     <script src="/FrontEnd/js/login.js" type="module"></script>
     </body>

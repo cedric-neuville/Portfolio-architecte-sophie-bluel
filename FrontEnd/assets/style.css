@@ -79,6 +79,29 @@ section {
 	margin: 50px 0
 }
 
+#loginBanner {
+	width: 100%;
+	display: flex!important;
+	flex-direction: row;
+}
+
+.white-change-btn, .white-title{
+	color: white;
+	font-weight: lighter
+}
+
+.white-change-btn {
+	width: min-content
+}
+
+.white-title {
+	width: 20%
+}
+
+#editionButton {
+	width: 33%
+}
+
 #navBar a {
 	text-decoration: none;
 	color: black;
@@ -133,6 +156,15 @@ li:hover {
 	font-weight: 100;
 }
 
+#modificationPhotoDeProfil {
+	width: 80%;
+    margin: 10px auto 0
+}
+
+#modificationArticle {
+	margin-bottom: 15px
+}
+
 #introduction figure {
 	flex: 1
 }
@@ -152,14 +184,18 @@ li:hover {
 #introduction p {
 	margin-bottom: 0.5em;
 }
+.title-and-btn {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1em
+}
 #portfolio h2 {
+	width: 50%;
 	text-align: center;
-	margin-bottom: 1em;
 }
 
 #modificationProjet {
-	position:relative;
-	left: 20px;
+	width: 50%;
 	font-size: 15px;
 }
 
@@ -259,6 +295,181 @@ input[type="submit"]{
 	color: #3D3D3D;
 	text-align: center;
 } 
+
+ #modalMain {
+	position:fixed;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.8);
+}
+
+#overlay {
+	position: fixed;
+	top:0px;
+	left: 0px;
+	width: 100%;
+	height:100%;
+	background: rgba(0, 0, 0, 0.4);
+	display:block;
+	z-index: 1;
+}
+
+#modalMainContent {
+	width:625px;
+	height: 725 px;
+	background: white;
+	border-radius: 5px;
+	z-index: 2;
+}
+
+#galleryModalContent {
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	width:100%;
+	height: 100%;
+}
+
+.closeModal {
+	position: relative;
+	left: 300px;
+	top:5px;
+	color:black;
+	font-size: 30px;
+	text-decoration: none;
+	cursor:pointer;
+}
+
+#modalMainContent h3 {
+	font-size: 25px;
+	padding: 25px;
+}
+
+#galleryModalContent .card {
+	width: 16%;
+	height: 130px;
+	margin: 1px;
+}
+
+#galleryModalContent img {
+	width:100%;
+}
+
+.bin {
+	position: relative;
+	max-width: 20px;
+	top: 30px;
+	left: 50px;
+	cursor: pointer;
+}
+
+.BorderOfModal {
+	width: 420px;
+	height: 2px;
+	margin: 25px 0 50px O;
+	background-color: rgba(40, 40, 40, 0.4);
+}
+
+#addPhotoModalBtn{
+	border: none;
+	color: white;
+	border-radius: 25px;
+	padding: 15px 50px 15px 50px;
+	cursor: pointer;
+}
+
+#deleteGallery {
+	margin: 20px;
+	font-size: 20px;
+	color:red;
+	cursor: pointer;
+}
+
+#addPhotoModal{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height:100%;
+}
+
+#goBack {
+	position: relative;
+	width: 30px;
+	top: 10px;
+	left:-300px;
+}
+
+#addPhoto {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 420px;
+	height:170px;
+	gap: 5px;
+}
+
+#addPhotoIcon {
+	width: 60px;
+	height: 50px;
+	padding-top: 20px;
+}
+
+#addPhotoBtn {
+	box-shadow: none;
+	width: 300px;
+	height: 200px;
+}
+
+#addPhotoBtn::-webkit-file-upload-button {
+	color: transparent;
+	visibility: hidden;
+}
+
+#addPhotoBtn::before {
+	position: relative;
+	left: 60px;
+	top: 20px;
+	content: '+ Ajouter Photo';
+	color: #306685;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 15px 35px;
+	background-color: #CBD6DC;
+	border-radius: 30px;
+	display: inline;
+	cursor: pointer;
+}
+
+#addPhoto p {
+	padding-bottom: 20px;
+}
+
+.uploaded-photo {
+	position: fixed;
+	max-height: 170px;
+
+}
+
+#c[type="submit"] {
+	background-color: #A7A7A7;
+	color: white;
+	margin-bottom: 50px;
+	width: 60%;
+}
+
+#addPhotoModal .BorderOfModal {
+	margin-bottom: 10px;
+}
+
+#project-submit {
+	cursor: pointer;
+} */
 
 footer nav ul {
 	display: flex;
