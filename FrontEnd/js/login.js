@@ -1,5 +1,5 @@
 const portfolio = document.querySelector('gallery')
-const SubmitButton = document.getElementById('selectAll')
+const SubmitButton = document.getElementById('select-all')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
 let message = document.createElement('p')
@@ -21,7 +21,7 @@ SubmitButton.addEventListener('click', async (event) =>{
         })
     });
    
-    message.setAttribute('id', 'toDelete')
+    message.setAttribute('id', 'to-delete')
     message.innerText = ''
     message.style.color = 'red'
 

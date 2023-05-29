@@ -53,7 +53,7 @@ body {
 	font-family: 'Work Sans' ;
 	font-size: 14px;
 }
-#loginBanner {
+#login-banner {
 	width: 100%;
 	height: 50px;
 	background-color: black;
@@ -63,7 +63,7 @@ body {
 	align-items: center;
 	gap:10px;
 }
-#editionButton {
+#edition-button {
 	background-color: white;
 	border-radius: 60px;
 	padding: 8px;
@@ -79,7 +79,7 @@ section {
 	margin: 50px 0
 }
 
-#loginBanner {
+#login-banner {
 	width: 100%;
 	display: flex!important;
 	flex-direction: row;
@@ -98,11 +98,11 @@ section {
 	width: 20%
 }
 
-#editionButton {
+#edition-button {
 	width: 33%
 }
 
-#navBar a {
+#nav-bar a {
 	text-decoration: none;
 	color: black;
 	font-size: 12px;
@@ -148,7 +148,7 @@ li:hover {
 	align-items: center;
 }
 
-#modificationPhotoDeProfil,#modificationArticle,#modificationProjet,#loginBanner {
+#modification-photo-de-profil,#modification-article,#modification-projet,#login-banner {
 	display:none;
 	cursor: pointer;
 	color:black;
@@ -156,12 +156,12 @@ li:hover {
 	font-weight: 100;
 }
 
-#modificationPhotoDeProfil {
+#modification-photo-de-profil {
 	width: 80%;
     margin: 10px auto 0
 }
 
-#modificationArticle {
+#modification-article {
 	margin-bottom: 15px
 }
 
@@ -187,19 +187,19 @@ li:hover {
 .title-and-btn {
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	margin-bottom: 1em
 }
 #portfolio h2 {
-	width: 50%;
-	text-align: center;
+	text-align: center
 }
 
-#modificationProjet {
-	width: 50%;
-	font-size: 15px;
+#modification-projet {
+	margin-left: 15px;
+	font-size: 15px
 }
 
-#modificationProjet.active {
+#modification-projet.active {
 	display: inline-flex;
 	align-items: center;
 }
@@ -296,38 +296,27 @@ input[type="submit"]{
 	text-align: center;
 } 
 
- #modalMain {
+ #modal-main {
 	position:fixed;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	background: rgba(0, 0, 0, 0.8);
 }
 
-#overlay {
-	position: fixed;
-	top:0px;
-	left: 0px;
-	width: 100%;
-	height:100%;
-	background: rgba(0, 0, 0, 0.4);
-	display:block;
-	z-index: 1;
-}
-
-#modalMainContent {
+#modal-main-content {
 	width:625px;
 	height: 725 px;
 	background: white;
 	border-radius: 5px;
-	z-index: 2;
+	/* z-index: 2; */
 }
 
-#galleryModalContent {
+#gallery-modal-content {
 	display:flex;
 	flex-direction: column;
 	align-items: center;
@@ -335,7 +324,7 @@ input[type="submit"]{
 	height: 100%;
 }
 
-.closeModal {
+.close-modal {
 	position: relative;
 	left: 300px;
 	top:5px;
@@ -345,18 +334,18 @@ input[type="submit"]{
 	cursor:pointer;
 }
 
-#modalMainContent h3 {
+#modal-main-content h3 {
 	font-size: 25px;
 	padding: 25px;
 }
 
-#galleryModalContent .card {
+#gallery-modal-content .card {
 	width: 16%;
 	height: 130px;
 	margin: 1px;
 }
 
-#galleryModalContent img {
+#gallery-modal-content img {
 	width:100%;
 }
 
@@ -368,14 +357,14 @@ input[type="submit"]{
 	cursor: pointer;
 }
 
-.BorderOfModal {
+.border-of-modal {
 	width: 420px;
 	height: 2px;
 	margin: 25px 0 50px O;
 	background-color: rgba(40, 40, 40, 0.4);
 }
 
-#addPhotoModalBtn{
+#add-photo-modal-btn{
 	border: none;
 	color: white;
 	border-radius: 25px;
@@ -383,14 +372,14 @@ input[type="submit"]{
 	cursor: pointer;
 }
 
-#deleteGallery {
+#delete-gallery {
 	margin: 20px;
 	font-size: 20px;
 	color:red;
 	cursor: pointer;
 }
 
-#addPhotoModal{
+#add-photo-modal{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -398,14 +387,14 @@ input[type="submit"]{
 	height:100%;
 }
 
-#goBack {
+#go-back {
 	position: relative;
 	width: 30px;
 	top: 10px;
 	left:-300px;
 }
 
-#addPhoto {
+#add-photo {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -414,24 +403,24 @@ input[type="submit"]{
 	gap: 5px;
 }
 
-#addPhotoIcon {
+#add-photo-icon {
 	width: 60px;
 	height: 50px;
 	padding-top: 20px;
 }
 
-#addPhotoBtn {
+#add-photo-btn {
 	box-shadow: none;
 	width: 300px;
 	height: 200px;
 }
 
-#addPhotoBtn::-webkit-file-upload-button {
+#add-photo-btn::-webkit-file-upload-button {
 	color: transparent;
 	visibility: hidden;
 }
 
-#addPhotoBtn::before {
+#add-photo-btn::before {
 	position: relative;
 	left: 60px;
 	top: 20px;
@@ -446,7 +435,7 @@ input[type="submit"]{
 	cursor: pointer;
 }
 
-#addPhoto p {
+#add-photo p {
 	padding-bottom: 20px;
 }
 
@@ -463,7 +452,7 @@ input[type="submit"]{
 	width: 60%;
 }
 
-#addPhotoModal .BorderOfModal {
+#add-photo-modal .border-of-modal {
 	margin-bottom: 10px;
 }
 
