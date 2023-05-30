@@ -28,7 +28,7 @@ const loginBanner = document.getElementById("login-banner")
 const logoutLink = document.querySelector(".logout-link")
 const modificationArticle = document.getElementById("modification-article")
 const modificationProjet = document.getElementById("modification-projet")
-const modificationPhotoDeProfil = document.getElementById("modification-photo-de-rofil")
+const modificationPhotoDeProfil = document.getElementById("modification-photo-de-profil")
 
 
 if (sessionStorage.getItem("token")) {
@@ -90,3 +90,34 @@ if (sessionStorage.getItem("token")) {
     divCategories.appendChild(categoryButton)
   })
 }
+
+// envoie d'un nouveau work
+
+export async function postNetwork (data) {
+  const token = sessionStorage.getItem("token");
+  const options = {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: data, 
+  };
+  return await fetch("http://localhost:5678/api/works", options);
+
+}
+
+// suppression d'un work
+export async function deleteWork(id) {
+  const token = sessionStorage.getItem("token");
+  const options = {
+    method: "DELETE",
+    headers: {
+      accept: "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+    body: data,
+  };
+  return await fetch(`http://localhost:5678/api/works/${id}`, options);
+}
+

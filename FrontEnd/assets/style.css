@@ -58,11 +58,12 @@ body {
 	height: 50px;
 	background-color: black;
 	color: rgb(255,255,255);
-	display: flex;
+	display: none;
 	justify-content: center;
 	align-items: center;
 	gap:10px;
 }
+
 #edition-button {
 	background-color: white;
 	border-radius: 60px;
@@ -233,7 +234,7 @@ li:hover {
 	background-color: #1d6154;
 	color: white;
   }
-  .inactive{
+  .inactive {
 	display: none
   }
 .gallery {
@@ -280,7 +281,7 @@ margin: auto;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
 
-input[type="submit"]{
+input[type="submit"] {
 	font-family: 'Syne';
 	font-weight: 700;
 	color: white;
@@ -298,7 +299,7 @@ input[type="submit"]{
 
  #modal-main {
 	position:fixed;
-	display: flex;
+	display: none;
 	align-items: center;
 	justify-content: center;
 	top: 0;
@@ -308,12 +309,14 @@ input[type="submit"]{
 	background: rgba(0, 0, 0, 0.8);
 }
 
+#modal-main.active {
+	display:flex;
+}
 #modal-main-content {
 	width:625px;
 	height: 725 px;
 	background: white;
 	border-radius: 5px;
-	/* z-index: 2; */
 }
 
 #gallery-modal-content {
@@ -326,8 +329,8 @@ input[type="submit"]{
 
 .close-modal {
 	position: relative;
-	left: 300px;
-	top:5px;
+	left: 275px;
+	top: 15px;
 	color:black;
 	font-size: 30px;
 	text-decoration: none;
@@ -339,7 +342,15 @@ input[type="submit"]{
 	padding: 25px;
 }
 
-#gallery-modal-content .card {
+#modal-gallery {
+	width: 420px;
+	height: 400px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1%;
+}
+
+#gallery-modal-content.card {
 	width: 16%;
 	height: 130px;
 	margin: 1px;
@@ -364,9 +375,10 @@ input[type="submit"]{
 	background-color: rgba(40, 40, 40, 0.4);
 }
 
-#add-photo-modal-btn{
+#add-photo-modal-btn {
 	border: none;
-	color: white;
+	color: #1D6154;
+	font-size: 18px;
 	border-radius: 25px;
 	padding: 15px 50px 15px 50px;
 	cursor: pointer;
@@ -374,12 +386,15 @@ input[type="submit"]{
 
 #delete-gallery {
 	margin: 20px;
-	font-size: 20px;
+	font-size: 16px;
 	color:red;
 	cursor: pointer;
 }
 
-#add-photo-modal{
+#add-photo-modal {
+	display: none;
+}
+#add-photo-modal.active {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -420,7 +435,7 @@ input[type="submit"]{
 	visibility: hidden;
 }
 
-#add-photo-btn::before {
+#add-photo-btn:before {
 	position: relative;
 	left: 60px;
 	top: 20px;
@@ -445,7 +460,7 @@ input[type="submit"]{
 
 }
 
-#c[type="submit"] {
+#add-photo-modal input[type="submit"] {
 	background-color: #A7A7A7;
 	color: white;
 	margin-bottom: 50px;

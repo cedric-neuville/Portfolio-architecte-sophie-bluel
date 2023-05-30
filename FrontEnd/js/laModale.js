@@ -3,9 +3,6 @@ let modal = null
 
 const OpenModal = function (e) {
     e.preventDefault()
-    // const target = document.querySelector(e.target.getAttribute("href"))
-    // target.style.dysplay = null
-    // modal = target
     modal = document.getElementById('modal-main')
     modal.style.display = "flex"
     modal.addEventListener('click', CloseModal)
@@ -26,4 +23,4 @@ const stopPropagation = function (e) {
     e.stopPropagation()
 }
 
-document.querySelector('.white-title').addEventListener('click', OpenModal)
+document.getElementById('modification-projet').addEventListener('click', OpenModal)
