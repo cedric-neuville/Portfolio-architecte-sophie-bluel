@@ -1,7 +1,7 @@
-import { deleteWork } from "./index.js";
+import {works} from "./index.js";
 
 // Création d'une carte de work
-export function createCard(work) {
+function createCard(work) {
   const card = document.createElement("div");
   card.classList.add("card");
   const bin = document.createElement("img");
@@ -29,7 +29,7 @@ export function createCard(work) {
 
 // Actualisation de la galerie modale avec les works
 export function majModalgallery(listOfWorks) {
-  const modalGallery = document.getElementById("modal-gallery");
+  const modalGallery = document.getElementById("gallery-modal");
   try {
     modalGallery.innerHTML = "";
     listOfWorks.map((work) => {
@@ -57,3 +57,19 @@ async function suppressWork(event, id) {
     }
   }
 }
+// suppression d'un work
+async function deleteWork(id) {
+    const token = sessionStorage.getItem("token");
+    const options = {
+      method: "DELETE",
+      headers: {
+        accept: "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: data,
+    };
+    return await fetch(`http://localhost:5678/api/works/${id}`, options);
+  }
+  
+  majModalgallery(works);
+  console.log(works)

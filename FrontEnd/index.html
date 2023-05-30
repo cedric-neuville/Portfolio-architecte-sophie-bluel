@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
 		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<meta name="description" content="">
 	<link rel="stylesheet" href="./assets/style.css">
 	<title>la Modale</title>
@@ -76,15 +77,16 @@
 
 	<aside style='display:none;' id="modal-main">
 		<div id="modal-main-content">
+			<i class="fa-solid fa-arrow-left return hidden"></i>
+			<i class="fa-solid fa-xmark close-modal "></i>
 			<div id="gallery-modal-content">
-				<div id="gallery-modal"></div>
-				<a class="close-modal">&times;</a>
 				<h3>Galerie photo</h3>
-				<div class="border-of-modal"></div>
+				<div id="gallery-modal"></div>
+				<hr>
 				<button id="add-photo-modal-btn">Ajouter une photo</button>
 				<a href="#" id="delete-gallery">Supprimer la galerie</a>
 			</div>
-			<div style='display:none;' id="add-photo-modal">
+			<div class='hidden' id="add-photo-modal">
 				<a href="gallery-modal-content" id="go-back"><img src="./assets/icons/Arrow_Back.png"></a>
 				<a href="" class="close-modal">&times;</a>
 				<h3>Ajout photo</h3>
@@ -113,6 +115,7 @@
 
 	<script src="./js/index.js" type="module"></script>
 	<script src="./js/laModale.js" type="module"></script>
+	<script src="./js/modalGallery.js" type="module"></script>
 </body>
 
 </html>

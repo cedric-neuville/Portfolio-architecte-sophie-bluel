@@ -1,6 +1,7 @@
 //récupération des travaux dans le fichier JSON
+
 let works_response = await fetch("http://localhost:5678/api/works");
-let works = await works_response.json();
+export let works = await works_response.json();
 
 
 function displayWorks(myWorks) {
@@ -105,19 +106,5 @@ export async function postNetwork (data) {
   };
   return await fetch("http://localhost:5678/api/works", options);
 
-}
-
-// suppression d'un work
-export async function deleteWork(id) {
-  const token = sessionStorage.getItem("token");
-  const options = {
-    method: "DELETE",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: data,
-  };
-  return await fetch(`http://localhost:5678/api/works/${id}`, options);
 }
 
