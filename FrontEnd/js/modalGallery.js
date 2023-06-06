@@ -27,7 +27,7 @@ function createCard(work) {
 
 // Actualisation de la galerie modale avec les works
 export function majModalgallery(listOfWorks) {
-  const modalGallery = document.getElementById("gallery-modal");
+  const modalGallery = document.querySelector(".thumbs");
   try {
     modalGallery.innerHTML = "";
     listOfWorks.map((work) => {

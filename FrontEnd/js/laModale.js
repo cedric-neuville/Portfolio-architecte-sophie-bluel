@@ -6,8 +6,8 @@ const OpenModal = function (e) {
     modal = document.getElementById('modal-main')
     modal.style.display = "flex"
     modal.addEventListener('click', CloseModal)
-    modal.querySelector('js-modal-close').addEventListener('click', CloseModal)
-    modal.querySelector('js-modal-stop').addEventListener('click', stopPropagation)
+    modal.querySelector('.close-modal').addEventListener('click', CloseModal)
+    modal.querySelector('#modal-main-content').addEventListener('click', stopPropagation)
 }
 const CloseModal = function (e) {
     if (modal === null) return

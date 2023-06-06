@@ -349,9 +349,24 @@ input[type="submit"] {
 #gallery-modal {
 	width: 420px;
 	display: flex;
-	flex-wrap: wrap;
-	gap: 7px;
+	flex-direction: column;
+	align-items: center;
 	margin-top: 46px;
+}
+
+.thumbs {
+	display: flex;
+	flex-wrap:wrap;
+	gap:7px;
+
+}
+
+#gallery-modal hr {
+	width:100%;
+	size: 1px;
+	color: #b3b3b3;
+	margin-top: 49px;
+	margin-bottom: 38px;
 }
 
 #gallery-modal .card {
@@ -373,19 +388,26 @@ input[type="submit"] {
 
 
 #add-photo-modal-btn {
-	border: none;
-	color: #1D6154;
-	font-size: 18px;
-	border-radius: 25px;
-	padding: 15px 50px 15px 50px;
-	cursor: pointer;
+  font-family: Syne;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  color: white;
+  background-color: #1D6154;
+  border-radius: 60px;
+  text-decoration: none;
+  padding: 10px 50px;
+  margin-bottom: 23px;
 }
 
 #delete-gallery {
-	margin: 20px;
-	font-size: 16px;
-	color:red;
-	cursor: pointer;
+	font-family: Syne;
+  	font-weight: 400;
+  	font-size: 14px;
+  	line-height: 17px;
+  	color: #D65353;
+  	text-decoration: none;
+ 	margin-bottom: 48px;
 }
 
 #add-photo-modal {
