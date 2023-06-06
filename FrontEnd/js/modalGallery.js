@@ -1,6 +1,4 @@
 import {works} from "./index.js";
-
-// Création d'une carte de work
 function createCard(work) {
   const card = document.createElement("div");
   card.classList.add("card");
@@ -40,7 +38,7 @@ export function majModalgallery(listOfWorks) {
   }
 }
 
-// Supprime un work
+// Suppression d'un work
 
 async function suppressWork(event, id) {
   if (
@@ -57,7 +55,7 @@ async function suppressWork(event, id) {
     }
   }
 }
-// suppression d'un work
+
 async function deleteWork(id) {
     const token = sessionStorage.getItem("token");
     const options = {

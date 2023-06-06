@@ -7,7 +7,6 @@ export let works = await works_response.json();
 function displayWorks(myWorks) {
   const portfolio = document.querySelector('.gallery')
   portfolio.innerHTML = ""
-  //on créer ses éléments depuis le code JavaScript
   myWorks.forEach(work => {
     const figure = document.createElement('figure')
     figure.id = `project-${work.id}`

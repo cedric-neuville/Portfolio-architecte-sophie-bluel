@@ -24,3 +24,9 @@ const stopPropagation = function (e) {
 }
 
 document.getElementById('modification-projet').addEventListener('click', OpenModal)
+
+const addPhotoModalBtn = document.getElementById("add-photo-modal-btn");
+addPhotoModalBtn.addEventListener("click", () => {
+  openAddPhotoModal();
+  createOptionsByCategories(categories);
+});

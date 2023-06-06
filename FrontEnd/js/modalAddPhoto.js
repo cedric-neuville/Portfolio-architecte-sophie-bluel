@@ -4,8 +4,15 @@ const GalleryModalContent = document.getElementById("gallery-modal-content");
 const AddPhotoModal = document.getElementById("add-photo-modal");
 const TitleOfProject = document.getElementById("title-of-project");
 const CategoryOfProject = document.getElementById("category-of-project");
+const addPhotoBtn = document.getElementById("addPhotoBtn");
+addPhotoBtn.addEventListener("change", previewPhoto);
 
-// Prévisualisation des photos téléchargées
+const goBack = document.getElementById("goBack");
+goBack.addEventListener("click", () => {
+  cancelUploadedPhoto();
+  returnToGalleryModal();
+});
+
 export function previewPhoto() {
     const photo = addPhotoBtn.files[0];
     const reader = new FileReader();
@@ -21,7 +28,6 @@ export function previewPhoto() {
     addPhotoInstructions.style.display = "none";
   }
 
-// Annulation du télechargement de la photo si deja fait
 export function cancelUploadedPhoto() {
     if (document.querySelector(".uploaded-photo")) {
       document.querySelector(".uploaded-photo").remove();
@@ -34,7 +40,7 @@ export function cancelUploadedPhoto() {
     }
 }
 
-// Ajouter les catégories dans le formulaire
+
 export async function createOptionsByCategories(listOfCategories) {
     try {
       projectCategory.innerHTML = "";
@@ -54,7 +60,6 @@ export async function createOptionsByCategories(listOfCategories) {
     }
   }
 
-//   Retour sur la galerie de la modale
   export function returnToGalleryModal() {
     const projectTitle = document.getElementById("project-title");
     projectTitle.value = "";
@@ -62,13 +67,13 @@ export async function createOptionsByCategories(listOfCategories) {
     modalViewGallery.classList.add("active");
   }
 
-// Envoie du formulaire pour un nouveau work
+
 export async function createNewWork() {
     const formData = new FormData();
     formData.append("title", projectTitle.value);
     formData.append("image", addPhotoBtn.files[0]);
     formData.append("category", projectCategory.value);
-    //Envoie de la requete
+
     try {
       const postedWork = await postNewWork(formData);
       console.log("Requête POST envoyé. Réponse du serveur : ", postedWork);

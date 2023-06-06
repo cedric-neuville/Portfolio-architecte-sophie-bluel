@@ -296,8 +296,7 @@ input[type="submit"] {
 	color: #3D3D3D;
 	text-align: center;
 } 
-
- #modal-main {
+#modal-main {
 	position:fixed;
 	display: none;
 	align-items: center;
@@ -320,11 +319,10 @@ input[type="submit"] {
 	position: relative;
 	box-sizing: border-box;
 	padding: 0 105px;
-}
-
-*,*:before, *:after {
+} 
+ *,*:before, *:after {
 	box-sizing: inherit;
-  }
+}
 
 #gallery-modal-content {
 	display:flex;
@@ -335,38 +333,21 @@ input[type="submit"] {
 	
 }
 
-/* .close-modal {
-	position:absolute;
-	right: 36px;
-	top: 32px;
-	color:black;
-	font-size: 30px;
-	text-decoration: none;
-	cursor:pointer;
-} */
-
 .close-modal {
 	position:absolute;
 	right: 36px;
 	top: 32px;
 	font-size: 19px;
+	cursor:pointer;
 }
 
 #modal-main-content h3 {
 	font-size: 25px;
-	padding: 25px;
-}
-
-#modal-gallery {
-	width: 420px;
-	height: 400px;
-	display: flex;
-	flex-wrap: wrap;
-	gap: 1%;
+	padding: 60px 0px 0px 0px;
 }
 
 #gallery-modal {
-	width: 500px;
+	width: 420px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 7px;
@@ -384,18 +365,12 @@ input[type="submit"] {
 
 .bin {
 	position: relative;
-	max-width: 20px;
+	max-width: 17px;
 	top: 30px;
 	left: 50px;
 	cursor: pointer;
 }
 
-.border-of-modal {
-	width: 420px;
-	height: 2px;
-	margin: 25px 0 50px O;
-	background-color: rgba(40, 40, 40, 0.4);
-}
 
 #add-photo-modal-btn {
 	border: none;
@@ -422,13 +397,6 @@ input[type="submit"] {
 	align-items: center;
 	width: 100%;
 	height:100%;
-}
-
-#go-back {
-	position: relative;
-	width: 30px;
-	top: 10px;
-	left:-300px;
 }
 
 #add-photo {
@@ -489,7 +457,7 @@ input[type="submit"] {
 	width: 60%;
 }
 
-#add-photo-modal .border-of-modal {
+#add-photo-modal {
 	margin-bottom: 10px;
 }
 

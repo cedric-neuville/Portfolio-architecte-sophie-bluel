@@ -81,14 +81,14 @@
 			<i class="fa-solid fa-xmark close-modal "></i>
 			<div id="gallery-modal-content">
 				<h3>Galerie photo</h3>
-				<div id="gallery-modal"></div>
-				<hr>
-				<button id="add-photo-modal-btn">Ajouter une photo</button>
-				<a href="#" id="delete-gallery">Supprimer la galerie</a>
+				<div id="gallery-modal">
+					<img id="binIcon" src="./assets/icons/binIcon.png" alt="">
+					<hr>
+					<button id="add-photo-modal-btn">Ajouter une photo</button>
+					<a href="#" id="delete-gallery">Supprimer la galerie</a>
+				</div>
 			</div>
 			<div class='hidden' id="add-photo-modal">
-				<a href="gallery-modal-content" id="go-back"><img src="./assets/icons/Arrow_Back.png"></a>
-				<a href="" class="close-modal">&times;</a>
 				<h3>Ajout photo</h3>
 				<form id="add-work-form">
 					<div id="add-photo">
@@ -116,6 +116,7 @@
 	<script src="./js/index.js" type="module"></script>
 	<script src="./js/laModale.js" type="module"></script>
 	<script src="./js/modalGallery.js" type="module"></script>
+	<!-- <script src="./js/modalAddPhoto.js" type="module"></script> -->
 </body>
 
 </html>
