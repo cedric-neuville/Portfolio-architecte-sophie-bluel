@@ -77,13 +77,12 @@
 
 	<aside style='display:none;' id="modal-main">
 		<div id="modal-main-content">
-			<i id="go-back" class="fa-solid fa-arrow-left return hidden"></i>
+			<i id="go-back" class="fa-solid fa-arrow-left return"></i>
 			<i class="fa-solid fa-xmark close-modal "></i>
 			<div id="gallery-modal-content">
 				<h3>Galerie photo</h3>
 				<div id="gallery-modal">
 					<div class="thumbs"></div>
-					<!-- <img id="binIcon" src="./assets/icons/binIcon.png" alt=""> -->
 					<hr>
 					<a href="#" id="add-photo-modal-btn">Ajouter une photo</a>
 					<a href="#" id="delete-gallery">Supprimer la galerie</a>
@@ -94,15 +93,16 @@
 				<form id="add-work-form">
 					<div id="add-photo">
 						<img id="add-photo-icon" src="./assets/icons/add-photo.png" alt="">
-						<input type="file" id="add-photo-btn" name="image" accept="image/pnj, image/jpeg" required>
+						<input type="file" id="add-photo-btn" name="image" accept="image/pnj,image/jpeg" required> + Ajouter photo
 						<p id="add-photo-description">jpg,png : 4mo max</p>
 					</div>
-					<label for="title-of-project">Titre</label>
+					<label id="title-of-project">Titre</label>
 					<input id="project-title" type="text" name="title" required>
-					<label for="category-of-project">Catégorie</label>
+					<label id="category-of-project">Catégorie</label>
 					<select id="category-of-project" name="category" required>  <option value=""></option></select> 
 					<option selected value=""></option>
 					</select>
+					<hr>
 					<input type="submit" id="project-submit" value="valider">
 				</form>
 			</div>

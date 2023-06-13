@@ -27,15 +27,30 @@ document.getElementById('modification-projet').addEventListener('click', OpenMod
 
 
 function openAddPhotoModal(e) {
-    const GalleryModalContent = document.getElementById('gallery-modal-content');
-    GalleryModalContent.style.display = "none"
-    let addPhotoModal = document.getElementById('add-photo-modal')
-    addPhotoModal.style.display = 'block'
+    const galleryModalContent = document.getElementById('gallery-modal-content');
+    galleryModalContent.style.display = "none"
+    const addPhotoModal = document.getElementById('add-photo-modal')
+    addPhotoModal.style.display = "block"
+    const goBack = document.getElementById('go-back')
+    goBack.style.display = "block"
    
  }
 
-const addPhotoModalBtn = document.getElementById("add-photo-modal-btn");
+const addPhotoModalBtn = document.getElementById('add-photo-modal-btn');
 addPhotoModalBtn.addEventListener("click", () =>{openAddPhotoModal()});
+
+
+function returnToGalleryModal(e) {
+    const goBack = document.getElementById('go-back');
+    goBack.style.display = "none"
+    const addPhotoModal = document.getElementById('add-photo-modal')
+    addPhotoModal.style.display = "none"
+    const galleryModalContent = document.getElementById('gallery-modal-content');
+    galleryModalContent.style.display = "block"
+}
+
+const goBack = document.getElementById('go-back');
+goBack.addEventListener("click", () =>{returnToGalleryModal()});
 
 
 
