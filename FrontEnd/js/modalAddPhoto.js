@@ -4,7 +4,7 @@ const GalleryModalContent = document.getElementById("gallery-modal-content");
 const AddPhotoModal = document.getElementById("add-photo-modal");
 const TitleOfProject = document.getElementById("title-of-project");
 const CategoryOfProject = document.getElementById("category-of-project");
-const addPhotoBtn = document.getElementById("addPhotoBtn");
+const addPhotoBtn = document.getElementById("add-photo-btn");
 addPhotoBtn.addEventListener("change", previewPhoto);
 
 const goBack = document.getElementById("goBack");
@@ -19,7 +19,7 @@ export function previewPhoto() {
     reader.onload = (e) => {
       const img = new Image();
       img.src = e.target.result;
-      img.classList.add("uploaded-photo");
+      img.classList.add();
       addPhoto.appendChild(img);
     };
     reader.readAsDataURL(photo);
@@ -29,11 +29,11 @@ export function previewPhoto() {
   }
 
 export function cancelUploadedPhoto() {
-    if (document.querySelector(".uploaded-photo")) {
-      document.querySelector(".uploaded-photo").remove();
-      const addPhotoIcon = document.getElementById("addPhotoIcon");
+    if (document.querySelector()) {
+      document.querySelector().remove();
+      const addPhotoIcon = document.getElementById("add-photo-icon");
       addPhotoIcon.style.display = "inline";
-      const addPhotoBtn = document.getElementById("addPhotoBtn");
+      const addPhotoBtn = document.getElementById("add-photo-btn");
       addPhotoBtn.style.display = "inline";
       const AddPhotoDescription = document.getElementById("add-photo-description");
       AddPhotoDescription.style.display = "block";

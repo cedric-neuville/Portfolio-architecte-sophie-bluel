@@ -13,10 +13,10 @@ const CloseModal = function (e) {
     if (modal === null) return
     e.preventDefault()
     modal.style.display = "none"
-    modal.removeEventListener("click", CloseModal)
-    modal.querySelector('.js-modal-close').removeEventListener('click', CloseModal)
-    modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
-    modal = null
+//     modal.removeEventListener("click", CloseModal)
+//     modal.querySelector().removeEventListener('click', CloseModal)
+//     modal.querySelector().removeEventListener('click', stopPropagation)
+//     modal = null
 }
 
 const stopPropagation = function (e) {
@@ -25,8 +25,17 @@ const stopPropagation = function (e) {
 
 document.getElementById('modification-projet').addEventListener('click', OpenModal)
 
+
+function openAddPhotoModal(e) {
+    const GalleryModalContent = document.getElementById('gallery-modal-content');
+    GalleryModalContent.style.display = "none"
+    let addPhotoModal = document.getElementById('add-photo-modal')
+    addPhotoModal.style.display = 'block'
+   
+ }
+
 const addPhotoModalBtn = document.getElementById("add-photo-modal-btn");
-addPhotoModalBtn.addEventListener("click", () => {
-  openAddPhotoModal();
-  createOptionsByCategories(categories);
-});
+addPhotoModalBtn.addEventListener("click", () =>{openAddPhotoModal()});
+
+
+
