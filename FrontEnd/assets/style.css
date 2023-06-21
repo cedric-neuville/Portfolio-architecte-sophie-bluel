@@ -369,7 +369,6 @@ input[type="submit"] {
 .thumbs {
 	display: flex;
 	flex-wrap:wrap;
-	height: 420px;
 	gap:7px;
 
 }
@@ -415,13 +414,9 @@ input[type="submit"] {
 }
 
 #delete-gallery {
-	font-family: Syne;
-  	font-weight: 400;
-  	font-size: 14px;
-  	line-height: 17px;
+	 font-family: Syne;
   	color: #D65353;
   	text-decoration: none;
- 	margin-bottom: 48px;
 }
 
 #add-photo-modal {
@@ -452,43 +447,39 @@ input[type="submit"] {
 	margin: 30px;
 }
 
-#add-photo-btn {
+#image {
 	box-shadow: none;
 	width: 300px;
 	height: 200px; 
 }
  
- #add-photo-btn::-webkit-file-upload-button {
+ #image::-webkit-file-upload-button {
 	color: transparent;
 	visibility: hidden;
 } 
 
-#add-photo-btn {
-	width: 173px;
-	height: 36px;
-	left: 633px;
-	top: 881px;
-	content: '+ Ajouter Photo';
+#add-photo label {
 	color: #306685;
 	font-size: 15px;
 	font-weight: bold;
 	padding: 15px 35px;
 	background-color: #CBD6DC;
-	border-radius: 30px;
-	cursor: pointer; 
+	border-radius: 30px;	
 }
 
-/* #add-photo p {
-	padding-bottom: 20px;
-} */
+#add-photo label:hover {
+	cursor: pointer;
+}
 
 
-#add-photo-modal input[type="submit"] {
+ #add-photo-modal input[type="submit"] {
 	background-color: #A7A7A7;
 	color: white;
 	margin-bottom: 50px;
 	width: 60%;
-}
+} 
+
+
 
 #add-photo-modal {
 	margin-bottom: 10px;
@@ -501,10 +492,7 @@ input[type="submit"] {
 	margin-bottom: 15px;
 }
 
-#title-of-project {
-	margin-bottom: 10px;
 
-}
 #category-of-project {
 	width:420px;
 	height:51px;
@@ -521,9 +509,18 @@ input[type="submit"] {
   	padding: 10px 50px;
 } 
 
+#project-submit input[type="submit"]  {
+	color: #306685;
+
+}
+
 footer nav ul {
 	display: flex;
 	justify-content: flex-end;
 	margin: 2em
+}
+
+.hidden {
+	display: none;
 }
 

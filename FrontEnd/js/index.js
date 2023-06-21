@@ -73,11 +73,11 @@ if (sessionStorage.getItem("token")) {
     }
     categoryButton.addEventListener('click', () => {
       // On filtre les oeuvres à afficher en fonction de la catégorie sélectionnée
-      let works_filtred =
+      let worksFiltred =
         category.id === 0
           ? works // Si 'Tous' est sélectionné, on affiche toutes les oeuvres
           : works.filter(work => work.categoryId === category.id) // Sinon, on affiche seulement les oeuvres de la catégorie sélectionnée
-      displayWorks(works_filtred)
+      displayWorks(worksFiltred)
 
       // On met la classe "active" au filtre sélectionné
       const activeButton = document.querySelector('.active')
@@ -91,19 +91,7 @@ if (sessionStorage.getItem("token")) {
   })
 }
 
-// envoie d'un nouveau work
 
-export async function postNetwork (data) {
-  const token = sessionStorage.getItem("token");
-  const options = {
-    method: "POST",
-    headers: {
-      accept: "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-    body: data, 
-  };
-  return await fetch("http://localhost:5678/api/works", options);
 
-}
+
 

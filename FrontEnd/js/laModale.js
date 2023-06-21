@@ -13,10 +13,6 @@ const CloseModal = function (e) {
     if (modal === null) return
     e.preventDefault()
     modal.style.display = "none"
-//     modal.removeEventListener("click", CloseModal)
-//     modal.querySelector().removeEventListener('click', CloseModal)
-//     modal.querySelector().removeEventListener('click', stopPropagation)
-//     modal = null
 }
 
 const stopPropagation = function (e) {

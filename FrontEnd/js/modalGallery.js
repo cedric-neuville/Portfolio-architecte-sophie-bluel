@@ -58,13 +58,14 @@ async function suppressWork(event, id) {
 
 async function deleteWork(id) {
     const token = sessionStorage.getItem("token");
+    console.log(token)
     const options = {
       method: "DELETE",
       headers: {
         accept: "application/json",
         Authorization: `Bearer ${token}`,
       },
-      body: data,
+      
     };
     return await fetch(`http://localhost:5678/api/works/${id}`, options);
   }

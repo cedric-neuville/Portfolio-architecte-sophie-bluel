@@ -1,9 +1,7 @@
-const portfolio = document.querySelector('gallery')
 const SubmitButton = document.getElementById('select-all')
 const email = document.getElementById('email')
 const password = document.getElementById('password')
-let message = document.createElement('p')
-
+const message = document.createElement('p')
 
 
 
