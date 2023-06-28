@@ -63,17 +63,17 @@ function createOptionsByCategories(listOfCategories) {
   }
 
 
-    try {
-      const postedWork = await postNewWork(formData);
-      console.log("Requête POST envoyé. Réponse du serveur : ", postedWork);
-      addPhotoBtn.value = "";
-      titleOfProject.value = "";
-      categoryOfProject.value = "";
-    } catch (err) {
-      window.alert(
-        "Problême de connection : impossible de poster un nouveau projet."
-      );
-    }
+    // try {
+    //   const postedWork = await postNewWork(formData);
+    //   console.log("Requête POST envoyé. Réponse du serveur : ", postedWork);
+    //   addPhotoBtn.value = "";
+    //   titleOfProject.value = "";
+    //   categoryOfProject.value = "";
+    // } catch (err) {
+    //   window.alert(
+    //     "Problême de connection : impossible de poster un nouveau projet."
+    //   );
+    // }
 
     async function createNewWork() {
         const formData = new FormData();
@@ -81,4 +81,30 @@ function createOptionsByCategories(listOfCategories) {
         formData.append("image", addPhotoBtn.files[0]);
         formData.append("category", categoryOfProject.value);
   }
-  
+
+  function togglePreview() {
+    document.querySelector('.preview').classList.toggle('hidden')
+    document.querySelector('.selection').classList.toggle('hidden')
+  }
+
+  let inputImage = document.getElementById('image')
+  inputImage.addEventListener('change', () => {
+    const file = inputImage.files[0];
+    const maxSize = 4 *1024*1024;
+    const authorizedType = /(jpg|jpeg|png)$/; 
+    if ( file.size > maxSize) {
+        console.log('taille non valide')
+        return false
+    }
+    if (!authorizedType.test(file.type)) {
+        console.log('type non valide')
+        return false
+    }
+    let imgPreview = document.getElementById('img-preview')
+    imgPreview.src = URL.createObjectURL(file)
+    imgPreview.onload = () => {
+        URL.revokeObjectURL(imgPreview.src)
+        togglePreview()
+    };
+   
+  })

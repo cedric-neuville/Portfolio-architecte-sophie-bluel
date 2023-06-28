@@ -92,10 +92,15 @@
 				<h3>Ajout photo</h3>
 				<form id="add-work-form">
 					<div id="add-photo">
-						<img id="add-photo-icon" src="./assets/icons/add-photo.png" alt="">
-						<label for="image">+ Ajouter photo</label>
-						<input class="hidden" type="file" id="image" name="image" accept="image/pnj,image/jpeg" required>
-						<p id="add-photo-description">jpg,png : 4mo max</p>
+						<div class="preview hidden">
+							<img id="img-preview" src="" alt="">
+						</div>
+						<div class="selection">
+							<img id="add-photo-icon" src="./assets/icons/add-photo.png" alt="">
+							<label for="image">+ Ajouter photo</label>
+							<input class="hidden" type="file" id="image" name="image" accept="image/pnj,image/jpeg" required>
+							<p id="add-photo-description">jpg,png : 4mo max</p>
+						</div>
 					</div>
 					<label id="title-of-project">Titre</label>
 					<input id="project-title" type="text" name="title" required>

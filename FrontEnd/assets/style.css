@@ -441,6 +441,11 @@ input[type="submit"] {
 	margin-bottom: 30px;
 }
 
+#img-preview {
+	width: 150px;
+	height: 150px;
+
+}
 #add-photo-icon {
 	width: 58px;
 	height: 46px;
