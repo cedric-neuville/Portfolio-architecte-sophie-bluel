@@ -1,26 +1,4 @@
-// const projectTitle = document.getElementById('project-title');
-// const categoryOfProject = document.getElementById('category-of-project');
-// const projectSubmit = document.getElementById('project-submit');
 
-
-// function createOptionsByCategories(listOfCategories) {
-//     try {
-//       categoryOfProject.innerHTML = "";
-//       const nullOption = document.createElement('option');
-//       nullOption.value = "";
-//       categoryOfProject.appendChild(nullOption);
-//       listOfCategories.map((category) => {
-//         const option = document.createElement('option');
-//         option.value = category.id;
-//         option.innerText = category.name;
-//         categoryOfProject.appendChild(option);
-//       });
-//     } catch (err) {
-//       window.alert(
-//         "Problême de connection : impossible de récupérer les catégories."
-//       );
-//     }
-//   }
 import {categories} from "./index.js";
 
 let imgOk = false;
@@ -54,9 +32,7 @@ createOptionsByCategories(categories)
   
 //   }
 
-    // try {
-    //   const postedWork = await postNewWork(formData);
-    //   console.log("Requête POST envoyé. Réponse du serveur : ", postedWork);
+    
     //   addPhotoBtn.value = "";
     //   titleOfProject.value = "";
     //   categoryOfProject.value = "";
@@ -85,10 +61,14 @@ createOptionsByCategories(categories)
     const authorizedType = /(jpg|jpeg|png)$/; 
     if ( file.size > maxSize) {
         console.log('taille non valide')
+        imgOk = false
+        checkEntries()
         return false
     }
     if (!authorizedType.test(file.type)) {
         console.log('type non valide')
+        imgOk = false
+        checkEntries()
         return false
     }
     let imgPreview = document.getElementById('img-preview')
@@ -108,3 +88,27 @@ createOptionsByCategories(categories)
       document.getElementById('project-submit').disabled = true
     }
   }
+
+let title = document.getElementById('title')
+  title.addEventListener('change', function() {
+    console.log('toto')
+    if(this.value.length < 3 || this.value.length > 50) {
+      document.getElementById('error-title').textContent = 'taille du texte non valide'
+      titleOk = false
+    }else {
+      document.getElementById('error-title').textContent = ''
+      titleOk = true
+    }
+    checkEntries()
+  });
+  
+  let category = document.getElementById('category')
+  category.addEventListener('change', function() {
+    if(this.value) {
+      catOk = true 
+    }else {
+      catOk = false
+      console.log('pas de catégories sélectionnées')
+    }
+    checkEntries()
+  })

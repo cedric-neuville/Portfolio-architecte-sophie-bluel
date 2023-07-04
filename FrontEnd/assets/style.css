@@ -491,7 +491,7 @@ input[type="submit"] {
 }
 
 
-#project-title {
+#title {
 	width: 420px;
 	height: 51px;
 	margin-bottom: 15px;
@@ -502,6 +502,7 @@ input[type="submit"] {
 	width:420px;
 	height:51px;
 }
+
 #project-submit {
 	display:flex;
 	justify-content: center;
@@ -529,3 +530,6 @@ footer nav ul {
 	display: none;
 }
 
+#add-work-form label{
+	margin-bottom: 5px /*Ne marche pas*/
+}

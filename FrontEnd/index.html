@@ -102,8 +102,9 @@
 							<p id="add-photo-description">jpg,png : 4mo max</p>
 						</div>
 					</div>
-					<label id="title-of-project">Titre</label>
-					<input id="project-title" type="text" name="title" required>
+					<label for="title">Titre</label>
+					<input id="title" type="text" name="title" minlength="3" maxlength="50" required>
+					<p id="error-title"></p>
 					<label for="category">Catégorie</label>
 					<select id="category" name="category" required>  <option value=""></option></select> 
 					<option selected value=""></option>
