@@ -1,67 +1,58 @@
-const projectTitle = document.getElementById('project-title');
-const categoryOfProject = document.getElementById('category-of-project');
-const projectSubmit = document.getElementById('project-submit');
-projectSubmit.addEventListener('change', previewPhoto);
+// const projectTitle = document.getElementById('project-title');
+// const categoryOfProject = document.getElementById('category-of-project');
+// const projectSubmit = document.getElementById('project-submit');
 
 
-function previewPhoto() {
-    const photo = addPhotoBtn.files[0];
-    const reader = new FileReader();
-    reader.onload = (e) => {
-      const img = new Image();
-      img.src = e.target.result;
-      img.classList.add();
-      addPhoto.appendChild(img);
-    };
-    reader.readAsDataURL(photo);
-    addPhotoIcon.style.display = "none";
-    addPhotoBtn.style.display = "none";
-    addPhotoDescription.style.display = "none";
-  }
+// function createOptionsByCategories(listOfCategories) {
+//     try {
+//       categoryOfProject.innerHTML = "";
+//       const nullOption = document.createElement('option');
+//       nullOption.value = "";
+//       categoryOfProject.appendChild(nullOption);
+//       listOfCategories.map((category) => {
+//         const option = document.createElement('option');
+//         option.value = category.id;
+//         option.innerText = category.name;
+//         categoryOfProject.appendChild(option);
+//       });
+//     } catch (err) {
+//       window.alert(
+//         "Problême de connection : impossible de récupérer les catégories."
+//       );
+//     }
+//   }
+import {categories} from "./index.js";
 
-function cancelUploadedPhoto() {
-    if (document.querySelector()) {
-      document.querySelector().remove();
-      const addPhotoIcon = document.getElementById('add-photo-icon');
-      addPhotoIcon.style.display = "inline";
-      const addPhotoBtn = document.getElementById('add-photo-btn');
-      addPhotoBtn.style.display = "inline";
-      const AddPhotoDescription = document.getElementById('add-photo-description');
-      AddPhotoDescription.style.display = "block";
-    }
+let imgOk = false;
+let titleOk = false;
+let catOk = false;
+
+function createOptionsByCategories(cat) {
+  let select = document.getElementById('category')
+  cat.map((category) => {
+    const option = document.createElement('option');
+    option.value = category.id;
+    option.text = category.name;
+    select.appendChild(option);
+  });
 }
-function createOptionsByCategories(listOfCategories) {
-    try {
-      categoryOfProject.innerHTML = "";
-      const nullOption = document.createElement('option');
-      nullOption.value = "";
-      categoryOfProject.appendChild(nullOption);
-      listOfCategories.map((category) => {
-        const option = document.createElement('option');
-        option.value = category.id;
-        option.innerText = category.name;
-        categoryOfProject.appendChild(option);
-      });
-    } catch (err) {
-      window.alert(
-        "Problême de connection : impossible de récupérer les catégories."
-      );
-    }
-  }
-  async function postNewWork (data) {
-    const token = sessionStorage.getItem("token");
-    const options = {
-      method: "POST",
-      headers: {
-        accept: "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-      body: data, 
-    };
-    return await fetch("http://localhost:5678/api/works", options);
-  
-  }
 
+createOptionsByCategories(categories)
+
+
+//   async function postNewWork (data) {
+//     const token = sessionStorage.getItem("token");
+//     const options = {
+//       method: "POST",
+//       headers: {
+//         accept: "application/json",
+//         Authorization: `Bearer ${token}`,
+//       },
+//       body: data, 
+//     };
+//     return await fetch("http://localhost:5678/api/works", options);
+  
+//   }
 
     // try {
     //   const postedWork = await postNewWork(formData);
@@ -75,12 +66,12 @@ function createOptionsByCategories(listOfCategories) {
     //   );
     // }
 
-    async function createNewWork() {
-        const formData = new FormData();
-        formData.append("title", projectTitle.value);
-        formData.append("image", addPhotoBtn.files[0]);
-        formData.append("category", categoryOfProject.value);
-  }
+  //   async function createNewWork() {
+  //       const formData = new FormData();
+  //       formData.append("title", projectTitle.value);
+  //       formData.append("image", addPhotoBtn.files[0]);
+  //       formData.append("category", categoryOfProject.value);
+  // }
 
   function togglePreview() {
     document.querySelector('.preview').classList.toggle('hidden')
@@ -106,5 +97,14 @@ function createOptionsByCategories(listOfCategories) {
         URL.revokeObjectURL(imgPreview.src)
         togglePreview()
     };
-   
+  imgOk = true
+  checkEntries()
   })
+
+  function checkEntries() {
+    if (imgOk && titleOk && catOk) {
+      document.getElementById('project-submit').disabled = false
+    }else {
+      document.getElementById('project-submit').disabled = true
+    }
+  }

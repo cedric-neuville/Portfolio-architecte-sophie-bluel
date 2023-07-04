@@ -31,6 +31,9 @@ const modificationProjet = document.getElementById("modification-projet")
 const modificationPhotoDeProfil = document.getElementById("modification-photo-de-profil")
 
 
+let categories_response = await fetch("http://localhost:5678/api/categories");
+export let categories = await categories_response.json();
+
 if (sessionStorage.getItem("token")) {
 
   logoutLink.textContent = "logout"
@@ -49,8 +52,7 @@ if (sessionStorage.getItem("token")) {
 
 
 
-  let categories_response = await fetch("http://localhost:5678/api/categories");
-  let categories = await categories_response.json();
+  
   categories.unshift({ id: 0, name: "tous" })
 
 
