@@ -27,6 +27,8 @@ function openAddPhotoModal(e) {
     galleryModalContent.style.display = "none"
     const addPhotoModal = document.getElementById('add-photo-modal')
     addPhotoModal.style.display = "block"
+    const selection = document.querySelector('selection')
+    selection.classList = 'active'
     const goBack = document.getElementById('go-back')
     goBack.style.display = "block"
    

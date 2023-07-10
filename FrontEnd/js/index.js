@@ -38,6 +38,7 @@ if (sessionStorage.getItem("token")) {
 
   logoutLink.textContent = "logout"
   loginBanner.style.display = "block"
+  loginBanner.classList = "active"
   modificationArticle.style.display = "block"
   modificationProjet.style.display = "block"
   modificationPhotoDeProfil.style.display = "block"

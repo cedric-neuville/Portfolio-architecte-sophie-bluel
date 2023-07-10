@@ -61,8 +61,14 @@ body {
 	display: none;
 	justify-content: center;
 	align-items: center;
+	visibility: hidden;
 	gap:10px;
 }
+
+#login-banner.active {
+	visibility: visible;
+}
+
 
 #edition-button {
 	background-color: white;
@@ -444,7 +450,17 @@ input[type="submit"] {
 #img-preview {
 	width: 150px;
 	height: 150px;
+}
 
+.selection {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	visibility: visible;
+}
+
+.selection.active {
+	visibility: hidden
 }
 #add-photo-icon {
 	width: 58px;
