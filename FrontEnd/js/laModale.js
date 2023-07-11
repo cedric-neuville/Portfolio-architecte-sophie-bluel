@@ -25,14 +25,13 @@ document.getElementById('modification-projet').addEventListener('click', OpenMod
 function openAddPhotoModal(e) {
     const galleryModalContent = document.getElementById('gallery-modal-content');
     galleryModalContent.style.display = "none"
-    const addPhotoModal = document.getElementById('add-photo-modal')
+    const addPhotoModal = document.getElementById('add-photo-modal');
     addPhotoModal.style.display = "block"
-    const selection = document.querySelector('selection')
-    selection.classList = 'active'
+    // const selection = document.querySelector('selection');
+    // selection.classList = "active"
     const goBack = document.getElementById('go-back')
-    goBack.style.display = "block"
-   
- }
+    goBack.style.display = "block" 
+}
 
 const addPhotoModalBtn = document.getElementById('add-photo-modal-btn');
 addPhotoModalBtn.addEventListener("click", () =>{openAddPhotoModal()});
@@ -41,7 +40,7 @@ addPhotoModalBtn.addEventListener("click", () =>{openAddPhotoModal()});
 function returnToGalleryModal(e) {
     const goBack = document.getElementById('go-back');
     goBack.style.display = "none"
-    const addPhotoModal = document.getElementById('add-photo-modal')
+    const addPhotoModal = document.getElementById('add-photo-modal');
     addPhotoModal.style.display = "none"
     const galleryModalContent = document.getElementById('gallery-modal-content');
     galleryModalContent.style.display = "block"
@@ -49,6 +48,5 @@ function returnToGalleryModal(e) {
 
 const goBack = document.getElementById('go-back');
 goBack.addEventListener("click", () =>{returnToGalleryModal()});
-
 
 

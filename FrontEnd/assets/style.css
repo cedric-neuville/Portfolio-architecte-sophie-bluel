@@ -333,11 +333,13 @@ input[type="submit"] {
 #go-back {
 	display: none;
 	position: absolute;
+	left: 40px;
+	top: 40px;
 	font-size: 21px;
-	margin-top: 35px;
 	
-
 }
+
+
 #modal-main-content h3 {
 	display: flex;
 	justify-content: center;
@@ -442,26 +444,26 @@ input[type="submit"] {
 	align-items: center;
 	background-color: #E8F1F7;
 	width: 420px;
-	height: 169px;
+	height: 175px;
 	gap: 7px;
 	margin-bottom: 30px;
 }
 
 #img-preview {
-	width: 150px;
-	height: 150px;
+	width: 130px;
+	height: 170px;
 }
 
 .selection {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	visibility: visible;
+	/* visibility: visible; */
 }
 
-.selection.active {
+/* .selection.active {
 	visibility: hidden
-}
+}  */
 #add-photo-icon {
 	width: 58px;
 	height: 46px;
@@ -510,13 +512,15 @@ input[type="submit"] {
 #title {
 	width: 420px;
 	height: 51px;
-	margin-bottom: 15px;
+	margin-bottom: 20px;
+	border: solid;
 }
 
 
 #category {
 	width:420px;
 	height:51px;
+	border: solid;
 }
 
 #project-submit {
@@ -531,10 +535,9 @@ input[type="submit"] {
   	padding: 10px 50px;
 } 
 
-#project-submit input[type="submit"]  {
-	color: #306685;
-
-}
+ #project-submit:disabled  {
+	color: #1d6154;
+} 
 
 footer nav ul {
 	display: flex;

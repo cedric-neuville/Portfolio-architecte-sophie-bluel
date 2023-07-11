@@ -18,45 +18,15 @@ function createOptionsByCategories(cat) {
 createOptionsByCategories(categories)
 
 
-//   async function postNewWork (data) {
-//     const token = sessionStorage.getItem("token");
-//     const options = {
-//       method: "POST",
-//       headers: {
-//         accept: "application/json",
-//         Authorization: `Bearer ${token}`,
-//       },
-//       body: data, 
-//     };
-//     return await fetch("http://localhost:5678/api/works", options);
-  
-//   }
-
-    
-    //   addPhotoBtn.value = "";
-    //   titleOfProject.value = "";
-    //   categoryOfProject.value = "";
-    // } catch (err) {
-    //   window.alert(
-    //     "Problême de connection : impossible de poster un nouveau projet."
-    //   );
-    // }
-
-  //   async function createNewWork() {
-  //       const formData = new FormData();
-  //       formData.append("title", projectTitle.value);
-  //       formData.append("image", addPhotoBtn.files[0]);
-  //       formData.append("category", categoryOfProject.value);
-  // }
 
   function togglePreview() {
     document.querySelector('.preview').classList.toggle('hidden')
     document.querySelector('.selection').classList.toggle('hidden')
   }
 
-  let inputImage = document.getElementById('image')
-  inputImage.addEventListener('change', () => {
-    const file = inputImage.files[0];
+  let imageUrl = document.getElementById('image')
+  imageUrl.addEventListener('change', () => {
+    const file = imageUrl.files[0];
     const maxSize = 4 *1024*1024;
     const authorizedType = /(jpg|jpeg|png)$/; 
     if ( file.size > maxSize) {
@@ -86,12 +56,13 @@ createOptionsByCategories(categories)
       document.getElementById('project-submit').disabled = false
     }else {
       document.getElementById('project-submit').disabled = true
+      // window.alert("Problême de connection : impossible de poster un nouveau projet")
     }
   }
 
 let title = document.getElementById('title')
   title.addEventListener('change', function() {
-    console.log('toto')
+    
     if(this.value.length < 3 || this.value.length > 50) {
       document.getElementById('error-title').textContent = 'taille du texte non valide'
       titleOk = false
@@ -102,8 +73,8 @@ let title = document.getElementById('title')
     checkEntries()
   });
   
-  let category = document.getElementById('category')
-  category.addEventListener('change', function() {
+  let categoryId = document.getElementById('category')
+  categoryId.addEventListener('change', function() {
     if(this.value) {
       catOk = true 
     }else {
@@ -112,3 +83,29 @@ let title = document.getElementById('title')
     }
     checkEntries()
   })
+
+
+
+async function createNewWork (data) {
+const formData = new FormData();
+formData.append("title", title.value);
+formData.append("imageUrl", imageUrl.value);
+formData.append("categoryId", categoryId.value);
+const token = sessionStorage.getItem("token");
+  const options = {
+        method: "POST",
+        headers: {
+          accept: "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+        body: data, 
+      };
+      return await fetch("http://localhost:5678/api/works", options);
+  
+  } //catch (err) {
+     //window.alert("Problême de connection : impossible de creer un nouveau projet.");
+
+
+
+let postedWork = document.getElementById('project-submit')
+postedWork.addEventListener('project-submit', function(e) {createNewWork()});
