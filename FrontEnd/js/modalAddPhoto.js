@@ -1,5 +1,6 @@
 
 import {categories} from "./index.js";
+import {works, displayWorks} from "./index.js";
 
 let imgOk = false;
 let titleOk = false;
@@ -95,17 +96,37 @@ const token = sessionStorage.getItem("token");
   const options = {
         method: "POST",
         headers: {
-          accept: "application/json",
+          // accept: "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: data, 
+        body: FormData, 
       };
-      return await fetch("http://localhost:5678/api/works", options);
+    const res = await fetch("http://localhost:5678/api/works", options);
   
   } //catch (err) {
      //window.alert("Problême de connection : impossible de creer un nouveau projet.");
 
 
 
-let postedWork = document.getElementById('project-submit')
-postedWork.addEventListener('project-submit', function(e) {createNewWork()});
+let form = document.getElementById('add-work-form')
+form.addEventListener('submit', function(e) {
+  e.preventDefault()
+  // createNewWork()
+  let formData = new FormData(this)
+  const token = sessionStorage.getItem("token");
+  const options = {
+        method: "POST",
+        headers: {
+          // accept: "application/json",
+          'Authorization': `Bearer ${token}`,
+        },
+        body: formData, 
+      };
+     fetch("http://localhost:5678/api/works", options)
+      .then(res => res.json())
+      .then(work => {
+        works.push(work);
+        displayWorks(works)
+      })
+  
+});

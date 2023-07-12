@@ -4,7 +4,7 @@ let works_response = await fetch("http://localhost:5678/api/works");
 export let works = await works_response.json();
 
 
-function displayWorks(myWorks) {
+export function displayWorks(myWorks) {
   const portfolio = document.querySelector('.gallery')
   portfolio.innerHTML = ""
   myWorks.forEach(work => {
