@@ -48,7 +48,7 @@ table {
 }
 /** end reset css**/
 body {
-	max-width: 1140px;
+	max-width: 1376px;
 	margin:auto;
 	font-family: 'Work Sans' ;
 	font-size: 14px;
@@ -72,6 +72,7 @@ body {
 
 #edition-button {
 	background-color: white;
+	width: 13%;
 	border-radius: 60px;
 	padding: 8px;
 	font-weight: 700;
@@ -83,7 +84,7 @@ header {
 	margin: 50px 0;
 }
 section {
-	margin: 50px 0
+	margin-bottom: 9em;
 }
 
 #login-banner {
@@ -102,18 +103,25 @@ section {
 }
 
 .white-title {
-	width: 20%
+	width: 8%
 }
 
-#edition-button {
-	width: 33%
-}
 
 #nav-bar a {
 	text-decoration: none;
 	color: black;
-	font-size: 12px;
+	font-size: 16px;
 }
+
+.instagram-logo {
+	width: 22px;
+	height: 22px;
+}
+
+.logout-link {
+	font-weight: bold
+}
+
 h1{
 	display: flex;
 	flex-direction: column;
@@ -143,7 +151,7 @@ nav ul {
 
 }
 nav li {
-	padding: 0 10px;
+	padding: 0 20px;
 	
 }
 
@@ -153,6 +161,10 @@ li:hover {
 #introduction {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+	width: 70%;
+	margin:auto;
+	margin-bottom: 7em;
 }
 
 #modification-photo-de-profil,#modification-article,#modification-projet,#login-banner {
@@ -161,8 +173,12 @@ li:hover {
 	color:black;
 	font-size: 15px;
 	font-weight: 100;
+	margin-right: 20px;
 }
 
+.fa {
+	margin-right: 5px;
+}
 #modification-photo-de-profil {
 	width: 80%;
     margin: 10px auto 0
@@ -173,36 +189,38 @@ li:hover {
 }
 
 #introduction figure {
-	flex: 1
+	width: 50%
 }
 #introduction img {
 	display: block;
-	margin: auto;
-	width: 80%;
+	width: 100%;
 }
 
 #introduction article {
-	flex: 1
+	width: 42%
 }
 #introduction h2 {
 	margin-bottom: 1em;
 }
 
 #introduction p {
-	margin-bottom: 0.5em;
+	margin-bottom: 1.5em;
+	size:14px;
 }
 .title-and-btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	margin-bottom: 1em
+	margin-bottom: 7em
 }
+
+
 #portfolio h2 {
 	text-align: center
 }
 
 #modification-projet {
-	margin-left: 15px;
+	margin-left: 30px;
 	font-size: 15px
 }
 
@@ -244,7 +262,9 @@ li:hover {
 	display: none
   }
 .gallery {
-	width: 100%;
+	width: 70%;
+	margin:auto;
+	align-items: center;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
@@ -256,8 +276,8 @@ li:hover {
 
 }
 #contact, #login {
-	width: 50%;
-margin: auto;
+	width: 19%;
+	margin: auto;
 }
 #contact > *, #login > * {
 	text-align: center;
@@ -274,7 +294,8 @@ margin: auto;
 }
 
 #contact input, #login input {
-	height: 50px;
+	height: 51px;
+	width: 279px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
@@ -286,6 +307,8 @@ margin: auto;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 }
+
+
 
 input[type="submit"] {
 	font-family: 'Syne';
@@ -301,6 +324,7 @@ input[type="submit"] {
 #login a {
 	color: #3D3D3D;
 	text-align: center;
+	margin-bottom: 30px;
 } 
 #modal-main {
 	position:fixed;
@@ -381,6 +405,10 @@ input[type="submit"] {
 
 }
 
+.thumbs:hover {
+	cursor: crosshair;
+}
+
 #gallery-modal hr {
 	width:100%;
 	size: 1px;
@@ -401,8 +429,8 @@ input[type="submit"] {
 .bin {
 	position: relative;
 	max-width: 17px;
-	top: 30px;
-	left: 50px;
+	top: 24px;
+	left: 57px;
 	cursor: pointer;
 }
 
@@ -467,7 +495,8 @@ input[type="submit"] {
 #add-photo-icon {
 	width: 58px;
 	height: 46px;
-	margin: 30px;
+	margin: 22px;
+	opacity: 0.33;
 }
 
 #image {
@@ -476,6 +505,9 @@ input[type="submit"] {
 	height: 200px; 
 }
  
+#add-photo-description {
+	font-size: 10px;
+}
  #image::-webkit-file-upload-button {
 	color: transparent;
 	visibility: hidden;
@@ -512,15 +544,20 @@ input[type="submit"] {
 #title {
 	width: 420px;
 	height: 51px;
-	margin-bottom: 20px;
+	margin: 10px 0 15px 0;
 	border: solid;
+	opacity: 0.1;
+	box-shadow: 2px 2px 11px 3px;
 }
 
 
 #category {
 	width:420px;
 	height:51px;
+	margin: 10px 0 15px 0;
 	border: solid;
+	opacity: 0.1;
+	box-shadow: 2px 2px 11px 3px;
 }
 
 #project-submit {
