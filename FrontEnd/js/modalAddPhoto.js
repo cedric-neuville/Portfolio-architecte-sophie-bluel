@@ -1,7 +1,7 @@
 
 import {categories} from "./index.js";
 import {works, displayWorks} from "./index.js";
-
+// import {createCard} from "./modalGallery.js"
 let imgOk = false;
 let titleOk = false;
 let catOk = false;
@@ -32,12 +32,14 @@ createOptionsByCategories(categories)
     const authorizedType = /(jpg|jpeg|png)$/; 
     if ( file.size > maxSize) {
         console.log('taille non valide')
+        document.getElementById('error-img').textContent = 'taille non valide'
         imgOk = false
         checkEntries()
         return false
     }
     if (!authorizedType.test(file.type)) {
         console.log('type non valide')
+        document.getElementById('error-img').textContent = 'type non valide'
         imgOk = false
         checkEntries()
         return false
@@ -54,10 +56,13 @@ createOptionsByCategories(categories)
 
   function checkEntries() {
     if (imgOk && titleOk && catOk) {
-      document.getElementById('project-submit').disabled = false
+      //document.getElementById('add-photo-modal input[type="submit"]').disabled = false
+      document.getElementById('error-form').textContent = ''
+      //document.getElementById('project-submit"]').classList = 'active'
     }else {
-      document.getElementById('project-submit').disabled = true
-      // window.alert("Problême de connection : impossible de poster un nouveau projet")
+      //document.getElementById('add-photo-modal input[type="submit"]').disabled = true
+      document.getElementById('error-form').textContent = 'Impossible de poster un nouveau projet'
+      //document.getElementById('project-submit"]').classList 'in'
     }
   }
 
@@ -77,10 +82,13 @@ let title = document.getElementById('title')
   let categoryId = document.getElementById('category')
   categoryId.addEventListener('change', function() {
     if(this.value) {
+      document.getElementById('error-category').textContent = ''
       catOk = true 
     }else {
       catOk = false
       console.log('pas de catégories sélectionnées')
+      document.getElementById('error-category').textContent = 'aucune catégorie selectionnée'
+     
     }
     checkEntries()
   })
@@ -111,7 +119,7 @@ const token = sessionStorage.getItem("token");
 let form = document.getElementById('add-work-form')
 form.addEventListener('submit', function(e) {
   e.preventDefault()
-  // createNewWork()
+  createNewWork()
   let formData = new FormData(this)
   const token = sessionStorage.getItem("token");
   const options = {
@@ -126,7 +134,8 @@ form.addEventListener('submit', function(e) {
       .then(res => res.json())
       .then(work => {
         works.push(work);
-        displayWorks(works)
+        displayWorks(works);
+        //createCard(work)
       })
   
 });

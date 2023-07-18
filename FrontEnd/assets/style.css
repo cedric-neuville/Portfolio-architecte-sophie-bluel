@@ -368,7 +368,7 @@ input[type="submit"] {
 	display: flex;
 	justify-content: center;
 	font-size: 25px;
-	padding: 70px 0px 40px 0px;
+	padding-top:70px; 
 }
 
 #gallery-modal-content {
@@ -405,10 +405,6 @@ input[type="submit"] {
 
 }
 
-.thumbs:hover {
-	cursor: crosshair;
-}
-
 #gallery-modal hr {
 	width:100%;
 	size: 1px;
@@ -418,23 +414,43 @@ input[type="submit"] {
 }
 
 #gallery-modal .card {
+	position: relative;
 	width: 78px;
-	margin-bottom: 10px;
 }
 
 #gallery-modal-content img {
 	width:100%;
 }
 
-.bin {
-	position: relative;
+#arrow {display: none;
+	position: absolute;
 	max-width: 17px;
-	top: 24px;
-	left: 57px;
+	top: 5px;
+	left: 37px;
+	color: #fff;
+	background-color: #000;
+    border: 2px solid #000;
+    border-radius: 3px;
 	cursor: pointer;
 }
 
+#trash {
+	display: none;
+	position: absolute;
+	max-width: 17px;
+	top: 5px;
+	left: 57px;
+	font-weight:  lighter;
+	color: #fff;
+	background-color: #000;
+    border: 2px solid #000;
+    border-radius: 3px;
+	cursor: pointer;
+}
 
+#gallery-modal .card:hover #trash, #gallery-modal .card:hover #arrow {
+	display: block !important;
+}
 
 #add-photo-modal-btn {
   font-family: Syne;
@@ -448,6 +464,16 @@ input[type="submit"] {
   padding: 10px 50px;
   margin-bottom: 23px;
 }
+
+/*#add-photo-modal input[type="submit"]:disabled {
+  background-color: #1D6154;
+}
+*/
+
+/* #project-submit:disabled {
+	background-color: #1D6154;
+
+} */
 
 #delete-gallery {
 	 font-family: Syne;
@@ -507,6 +533,7 @@ input[type="submit"] {
  
 #add-photo-description {
 	font-size: 10px;
+	margin-bottom: 8px;
 }
  #image::-webkit-file-upload-button {
 	color: transparent;
@@ -530,7 +557,6 @@ input[type="submit"] {
  #add-photo-modal input[type="submit"] {
 	background-color: #A7A7A7;
 	color: white;
-	margin-bottom: 50px;
 	width: 60%;
 } 
 
@@ -545,19 +571,22 @@ input[type="submit"] {
 	width: 420px;
 	height: 51px;
 	margin: 10px 0 15px 0;
-	border: solid;
-	opacity: 0.1;
-	box-shadow: 2px 2px 11px 3px;
+	border: solid lightgray;
+	box-shadow: 2px 2px 11px 3px lightgray;
 }
 
+#error-title, #error-category, #error-form, #error-img {
+	color: red;
+	font-size: 10px;
+	text-align: center;
+}
 
 #category {
 	width:420px;
 	height:51px;
-	margin: 10px 0 15px 0;
-	border: solid;
-	opacity: 0.1;
-	box-shadow: 2px 2px 11px 3px;
+	margin-top: 12px;
+	border: solid  lightgray;
+	box-shadow: 2px 2px 11px 3px  lightgray;
 }
 
 #project-submit {
@@ -573,6 +602,15 @@ input[type="submit"] {
 } 
 
  #project-submit:disabled  {
+	display:flex;
+	justify-content: center;
+	cursor: pointer;
+	font-family: Syne;
+  	font-weight: 700;
+  	font-size: 14px;
+  	line-height: 17px;
+  	text-decoration: none;
+  	padding: 10px 50px;
 	color: #1d6154;
 } 
 
