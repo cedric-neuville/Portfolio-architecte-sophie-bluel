@@ -59,6 +59,7 @@ body {
 	background-color: black;
 	color: rgb(255,255,255);
 	display: none;
+	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	visibility: hidden;
@@ -87,11 +88,7 @@ section {
 	margin-bottom: 9em;
 }
 
-#login-banner {
-	width: 100%;
-	display: flex!important;
-	flex-direction: row;
-}
+	
 
 .white-change-btn, .white-title{
 	color: white;
@@ -465,15 +462,18 @@ input[type="submit"] {
   margin-bottom: 23px;
 }
 
-/*#add-photo-modal input[type="submit"]:disabled {
+#add-photo-modal input[type="submit"]:enabled {
   background-color: #1D6154;
 }
-*/
 
-/* #project-submit:disabled {
+#add-photo-modal input[type="submit"]:disabled {
+	background-color: #A7A7A7;
+  }
+
+
+.green-button {
 	background-color: #1D6154;
-
-} */
+}
 
 #delete-gallery {
 	 font-family: Syne;
@@ -587,7 +587,20 @@ input[type="submit"] {
 	margin-top: 12px;
 	border: solid  lightgray;
 	box-shadow: 2px 2px 11px 3px  lightgray;
+	background-color: white;
+	appearance: none;
+	background-image: url('./icons/select.png');
+	background-position: 95% 50%;
+	background-repeat: no-repeat;
 }
+
+/* #category {
+	background-color: white;
+	appearance: none;
+	background-image: url('./icons/select.png');
+	background-position: 95% 50%;
+	background-repeat: no-repeat;
+  } */
 
 #project-submit {
 	display:flex;

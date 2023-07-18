@@ -37,7 +37,7 @@ export let categories = await categories_response.json();
 if (sessionStorage.getItem("token")) {
 
   logoutLink.textContent = "logout"
-  loginBanner.style.display = "block"
+  loginBanner.style.display = "flex"
   loginBanner.classList = "active"
   modificationArticle.style.display = "block"
   modificationProjet.style.display = "block"

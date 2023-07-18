@@ -1,7 +1,7 @@
 
 import {categories} from "./index.js";
 import {works, displayWorks} from "./index.js";
-// import {createCard} from "./modalGallery.js"
+ import {majModalgallery} from "./modalGallery.js"
 let imgOk = false;
 let titleOk = false;
 let catOk = false;
@@ -56,13 +56,14 @@ createOptionsByCategories(categories)
 
   function checkEntries() {
     if (imgOk && titleOk && catOk) {
-      //document.getElementById('add-photo-modal input[type="submit"]').disabled = false
+      document.getElementById('project-submit').disabled = false
+     
       document.getElementById('error-form').textContent = ''
-      //document.getElementById('project-submit"]').classList = 'active'
+     
     }else {
-      //document.getElementById('add-photo-modal input[type="submit"]').disabled = true
+      document.getElementById('project-submit').disabled = true
       document.getElementById('error-form').textContent = 'Impossible de poster un nouveau projet'
-      //document.getElementById('project-submit"]').classList 'in'
+     
     }
   }
 
@@ -95,31 +96,10 @@ let title = document.getElementById('title')
 
 
 
-async function createNewWork (data) {
-const formData = new FormData();
-formData.append("title", title.value);
-formData.append("imageUrl", imageUrl.value);
-formData.append("categoryId", categoryId.value);
-const token = sessionStorage.getItem("token");
-  const options = {
-        method: "POST",
-        headers: {
-          // accept: "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: FormData, 
-      };
-    const res = await fetch("http://localhost:5678/api/works", options);
-  
-  } //catch (err) {
-     //window.alert("Problême de connection : impossible de creer un nouveau projet.");
-
-
 
 let form = document.getElementById('add-work-form')
 form.addEventListener('submit', function(e) {
   e.preventDefault()
-  createNewWork()
   let formData = new FormData(this)
   const token = sessionStorage.getItem("token");
   const options = {
@@ -135,7 +115,7 @@ form.addEventListener('submit', function(e) {
       .then(work => {
         works.push(work);
         displayWorks(works);
-        //createCard(work)
+        majModalgallery(works);
       })
   
 });
