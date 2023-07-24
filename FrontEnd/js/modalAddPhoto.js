@@ -39,7 +39,7 @@ createOptionsByCategories(categories)
     }
     if (!authorizedType.test(file.type)) {
         console.log('type non valide')
-        document.getElementById('error-img').textContent = 'type non valide'
+        document.getElementById('error-img').textContent = 'type de fichier non valide'
         imgOk = false
         checkEntries()
         return false
