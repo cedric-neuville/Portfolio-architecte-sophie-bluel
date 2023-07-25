@@ -21,55 +21,60 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;
+	vertical-align: baseline
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;
+	display: block
 }
+
 body {
-	line-height: 1;
+	line-height: 1
 }
+
 ol, ul {
-	list-style: none;
+	list-style: none
 }
+
 blockquote, q {
-	quotes: none;
+	quotes: none
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
 	content: '';
-	content: none;
+	content: none
 }
+
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
+	border-spacing: 0
 }
 /** end reset css**/
 body {
 	max-width: 1376px;
 	margin:auto;
 	font-family: 'Work Sans' ;
-	font-size: 14px;
+	font-size: 14px
 }
+
 #login-banner {
 	width: 100%;
 	height: 50px;
 	background-color: black;
-	color: rgb(255,255,255);
+	/* color: rgb(255,255,255); */
 	display: none;
 	flex-direction: row;
 	justify-content: center;
 	align-items: center;
 	visibility: hidden;
-	gap:10px;
+	gap: 10px
 }
 
 #login-banner.active {
-	visibility: visible;
+	visibility: visible
 }
-
 
 #edition-button {
 	background-color: white;
@@ -77,20 +82,20 @@ body {
 	border-radius: 60px;
 	padding: 8px;
 	font-weight: 700;
-	cursor: pointer;
+	cursor: pointer
 }
+
 header {
 	display: flex;
 	justify-content: space-between;
-	margin: 50px 0;
+	margin: 50px 0
 }
+
 section {
-	margin-bottom: 9em;
+	margin-bottom: 9em
 }
 
-	
-
-.white-change-btn, .white-title{
+.white-change-btn, .white-title {
 	color: white;
 	font-weight: lighter
 }
@@ -103,16 +108,15 @@ section {
 	width: 8%
 }
 
-
 #nav-bar a {
 	text-decoration: none;
 	color: black;
-	font-size: 16px;
+	font-size: 16px
 }
 
 .instagram-logo {
 	width: 22px;
-	height: 22px;
+	height: 22px
 }
 
 .logout-link {
@@ -130,9 +134,8 @@ h1{
 
 h1 > span {
 	font-family: 'Work Sans';
-	font-size:10px;
-	letter-spacing: 0.1em;
-;
+	font-size: 10px;
+	letter-spacing: 0.1em
 }
 
 h2{
@@ -141,27 +144,32 @@ h2{
 	font-size: 30px;
 	color: #1D6154
 }
+
 nav ul {
 	display: flex;
 	align-items: center;
-	list-style-type: none;
-
+	list-style-type: none
 }
+
 nav li {
-	padding: 0 20px;
-	
+	padding: 0 20px	
+}
+
+footer li {
+	margin-top: 130px
 }
 
 li:hover {
-	color: #B1663C;
+	color: #B1663C
 }
+
 #introduction {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
 	width: 70%;
 	margin:auto;
-	margin-bottom: 7em;
+	margin-bottom: 7em
 }
 
 #modification-photo-de-profil,#modification-article,#modification-projet,#login-banner {
@@ -170,47 +178,46 @@ li:hover {
 	color:black;
 	font-size: 15px;
 	font-weight: 100;
-	margin-right: 20px;
+	margin-right: 20px
 }
 
 .fa {
-	margin-right: 5px;
-}
-#modification-photo-de-profil {
-	width: 80%;
-    margin: 10px auto 0
+	margin-right: 5px
 }
 
-#modification-article {
-	margin-bottom: 15px
+#modification-photo-de-profil {
+	width: 80%;
+    margin: 10px 0
 }
 
 #introduction figure {
 	width: 50%
 }
+
 #introduction img {
 	display: block;
-	width: 100%;
+	width: 100%
 }
 
 #introduction article {
 	width: 42%
 }
+
 #introduction h2 {
-	margin-bottom: 1em;
+	margin-bottom: 1em
 }
 
 #introduction p {
 	margin-bottom: 1.5em;
-	size:14px;
+	size:14px
 }
+
 .title-and-btn {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	margin-bottom: 7em
 }
-
 
 #portfolio h2 {
 	text-align: center
@@ -223,17 +230,18 @@ li:hover {
 
 #modification-projet.active {
 	display: inline-flex;
-	align-items: center;
+	align-items: center
 }
+
 .filter {
 	display: flex;
 	justify-content: center;
 	margin-bottom: 50px;
 	margin-top: 50px;
-	gap: 1%;
-  }
+	gap: 1%
+}
   
-  .button-style {
+.button-style {
 	min-height: 37px;
 	max-width: 200px;
 	min-width: 120px;
@@ -244,20 +252,22 @@ li:hover {
 	font-size: 16px;
 	padding-left: 1%;
 	padding-right: 1%;
-	font-weight: bold;
+	font-weight: bold
   }
   
-  .button-style:hover {
-	cursor: pointer;
+.button-style:hover {
+	cursor: pointer
+  }
+/* voir si active et inactive sont utiles */
+.active {
+	background-color: #1d6154;
+	color: white
   }
 
-  .active {
-	background-color: #1d6154;
-	color: white;
-  }
-  .inactive {
+.inactive {
 	display: none
   }
+
 .gallery {
 	width: 70%;
 	margin:auto;
@@ -265,72 +275,72 @@ li:hover {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-column-gap: 20px;
-	grid-row-gap: 20px;
+	grid-row-gap: 20px
 }
 
 .gallery img {
-	width: 100%;
-
+	width: 100%
 }
+
 #contact, #login {
 	width: 40%;
-	margin: auto;
+	margin: auto
 }
-#contact > *, #login > * {
-	text-align: center;
 
+#contact > *, #login > * {
+	text-align: center
 }
+
 #contact h2{
-	margin-bottom: 15px;
+	margin-bottom: 15px
 }
 
 #contact p {
-	margin-bottom: 40px;
+	margin-bottom: 40px
 }
+
 #contact form, #login form {
 	text-align: left;
 	width: 350px;
 	display: flex;
 	flex-direction: column;
 	margin-left: 100px;
-	margin: auto;
+	margin: auto
 }
 
 #contact label {
-	margin-bottom: 5px;
+	margin-bottom: 5px
 }
 
 #login-form label {
-	margin-bottom: 10px;
-
+	margin-bottom: 10px
 }
 
 #title {
-	color: #3D3D3D;
+	color: #3D3D3D
 }
+
 #contact input {
 	height: 51px;
 	font-size: 1.2em;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	margin-bottom: 40px;
+	margin-bottom: 40px
 }
 
 #login input {
 	height: 51px;
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
-	margin-bottom: 20px;
+	margin-bottom: 20px
 }
 
 #contact textarea {
 	border: none;
 	box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.09);
 	width: 350px;
-	margin-bottom: 40px;
+	margin-bottom: 40px
 }
-
-
 
 input[type="submit"] {
 	font-family: 'Syne';
@@ -341,20 +351,19 @@ input[type="submit"] {
 	width: 180px;
 	text-align: center;
 	border-radius: 60px ;
+	font-size: 14px
 }
 
-#to-delete {
-	margin-bottom: 150px;
-}
 #login a {
 	color: #3D3D3D;
 	text-align: center;
-	margin-bottom: 20px;
+	margin-bottom: 20px
 } 
 
 #login H2 {
-	margin-bottom: 40px;
+	margin-bottom: 40px
 }
+
 #modal-main {
 	position:fixed;
 	display: none;
@@ -364,12 +373,13 @@ input[type="submit"] {
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: rgba(0, 0, 0, 0.8);
+	background: rgba(0, 0, 0, 0.8)
 }
 
 #modal-main.active {
-	display:flex;
+	display:flex
 }
+
 #modal-main-content {
 	width:620px;
 	height: 660px;
@@ -377,27 +387,25 @@ input[type="submit"] {
 	border-radius: 5px;
 	position: relative;
 	box-sizing: border-box;
-	padding: 0 105px;
+	padding: 0 105px
 } 
- *,*:before, *:after {
-	box-sizing: inherit;
-}
+ /* *,*:before, *:after {
+	box-sizing: inherit
+} */
 
 #go-back {
 	display: none;
 	position: absolute;
 	left: 40px;
 	top: 32px;
-	font-size: 21px;
-	
+	font-size: 21px	
 }
-
 
 #modal-main-content h3 {
 	display: flex;
 	justify-content: center;
 	font-size: 25px;
-	margin: 60px 0 30px; 
+	margin: 60px 0 30px 
 }
 
 #gallery-modal-content {
@@ -405,8 +413,7 @@ input[type="submit"] {
 	flex-direction: column;
 	align-items: center;
 	width:100%;
-	height: 100%;
-	
+	height: 100%
 }
 
 .close-modal {
@@ -414,24 +421,21 @@ input[type="submit"] {
 	right: 36px;
 	top: 32px;
 	font-size: 19px;
-	cursor:pointer;
+	cursor:pointer
 }
-
-
 
 #gallery-modal {
 	width: 420px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	margin-top: 25px;
+	margin-top: 25px
 }
 
 .thumbs {
 	display: flex;
 	flex-wrap:wrap;
-	gap:7px;
-
+	gap: 7px
 }
 
 #gallery-modal hr {
@@ -439,19 +443,20 @@ input[type="submit"] {
 	size: 1px;
 	color: #b3b3b3;
 	margin-top: 30px;
-	margin-bottom: 38px;
+	margin-bottom: 30px
 }
 
 #gallery-modal .card {
 	position: relative;
-	width: 78px;
+	width: 78px
 }
 
 #gallery-modal-content img {
-	width:100%;
+	width:100%
 }
 
-#arrow {display: none;
+#arrow {
+	display: none;
 	position: absolute;
 	max-width: 17px;
 	top: 5px;
@@ -460,7 +465,7 @@ input[type="submit"] {
 	background-color: #000;
     border: 2px solid #000;
     border-radius: 3px;
-	cursor: pointer;
+	cursor: pointer
 }
 
 #trash {
@@ -474,11 +479,11 @@ input[type="submit"] {
 	background-color: #000;
     border: 2px solid #000;
     border-radius: 3px;
-	cursor: pointer;
+	cursor: pointer
 }
 
 #gallery-modal .card:hover #trash, #gallery-modal .card:hover #arrow {
-	display: block !important;
+	display: block !important
 }
 
 #add-photo-modal-btn {
@@ -491,41 +496,41 @@ input[type="submit"] {
   border-radius: 60px;
   text-decoration: none;
   padding: 10px 50px;
-  margin-bottom: 15px;
+  margin-bottom: 15px
 }
 
 #add-photo-modal input[type="submit"]:enabled {
   background-color: #1D6154;
-  height: 36px;
+  height: 36px
 }
 
 #add-photo-modal input[type="submit"]:disabled {
-	background-color: #A7A7A7;
-  }
-
+	background-color: #A7A7A7
+}
 
 .green-button {
-	background-color: #1D6154;
+	background-color: #1D6154
 }
 
 #delete-gallery {
 	 font-family: Syne;
   	color: #D65353;
-  	text-decoration: none;
+  	text-decoration: none
 }
 
 #add-photo-modal {
-	display: none;
+	display: none
 }
+
 #add-photo-modal.active {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	width: 500px;
-	height:400px;
+	height:400px
 }
 
-   #add-photo {
+#add-photo {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -534,45 +539,41 @@ input[type="submit"] {
 	height: 175px;
 	gap: 7px;
 	margin-bottom: 30px;
-	border-radius: 5px;
+	border-radius: 5px
 }
 
 #img-preview {
 	width: 130px;
-	height: 175px;
+	height: 175px
 }
 
 .selection {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
-	/* visibility: visible; */
+	align-items: center
 }
 
-/* .selection.active {
-	visibility: hidden
-}  */
 #add-photo-icon {
 	width: 58px;
 	height: 46px;
 	margin: 22px;
-	opacity: 0.1;
+	opacity: 0.1
 }
 
 #image {
 	box-shadow: none;
 	width: 300px;
-	height: 200px; 
+	height: 200px
 }
  
 #add-photo-description {
 	font-size: 10px;
-	margin-bottom: 8px;
+	margin-bottom: 8px
 }
- #image::-webkit-file-upload-button {
+ /* #image::-webkit-file-upload-button {
 	color: transparent;
-	visibility: hidden;
-} 
+	visibility: hidden
+}  */
 
 #add-photo label {
 	color: #306685;
@@ -580,40 +581,35 @@ input[type="submit"] {
 	font-weight: bold;
 	padding: 15px 35px;
 	background-color: #CBD6DC;
-	border-radius: 30px;	
+	border-radius: 30px	
 }
 
 #add-photo label:hover {
-	cursor: pointer;
+	cursor: pointer
 }
-
 
  #add-photo-modal input[type="submit"] {
 	background-color: #A7A7A7;
 	color: white;
-	width: 60%;
+	width: 60%
 } 
 
-
-
 #add-photo-modal {
-	margin-bottom: 10px;
+	margin-bottom: 10px
 }
-
 
 #title {
 	width: 420px;
 	height: 51px;
 	margin: 10px 0 15px 0;
 	border: solid lightgray;
-	box-shadow: 2px 2px 11px 3px lightgray;
+	box-shadow: 2px 2px 11px 3px lightgray
 }
 
 #error-title, #error-category, #error-form, #error-img {
 	color: red;
 	font-size: 10px;
-	text-align: center;
-	margin-bottom: 10px;
+	text-align: center
 }
 
 #category {
@@ -626,13 +622,12 @@ input[type="submit"] {
 	appearance: none;
 	background-image: url('./icons/select.png');
 	background-position: 95% 50%;
-	background-repeat: no-repeat;
+	background-repeat: no-repeat
 }
 
 #category hr {
-	margin-bottom: 30px;
-	
-  } 
+	margin-bottom: 30px	
+} 
 
 #project-submit {
 	display:flex;
@@ -643,7 +638,7 @@ input[type="submit"] {
   	font-size: 14px;
   	line-height: 17px;
   	text-decoration: none;
-  	margin: 30px 85px;
+  	margin: 30px 85px
 } 
 
  #project-submit:disabled  {
@@ -656,7 +651,7 @@ input[type="submit"] {
   	line-height: 17px;
   	text-decoration: none;
   	padding: 10px 50px;
-	color: #1d6154;
+	color: #1d6154
 } 
 
 footer nav ul {
@@ -666,9 +661,9 @@ footer nav ul {
 }
 
 .hidden {
-	display: none;
+	display: none
 }
 
 #add-work-form label{
-	margin-bottom: 7px;
+	margin-bottom: 7px
 }

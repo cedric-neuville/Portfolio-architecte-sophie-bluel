@@ -5,7 +5,7 @@ import {works, displayWorks} from "./index.js";
 let imgOk = false;
 let titleOk = false;
 let catOk = false;
-
+// fonction pour faire apparaître les différentes catégories 
 function createOptionsByCategories(cat) {
   let select = document.getElementById('category')
   cat.map((category) => {
@@ -19,26 +19,24 @@ function createOptionsByCategories(cat) {
 createOptionsByCategories(categories)
 
 
-
+// fonction qui remplace le preview par l'image si celle ci est valide
   function togglePreview() {
     document.querySelector('.preview').classList.toggle('hidden')
     document.querySelector('.selection').classList.toggle('hidden')
   }
-
+// fonction pour vérifier la validité de l'image (taille et type du fichier)
   let imageUrl = document.getElementById('image')
   imageUrl.addEventListener('change', () => {
     const file = imageUrl.files[0];
     const maxSize = 4 *1024*1024;
     const authorizedType = /(jpg|jpeg|png)$/; 
     if ( file.size > maxSize) {
-        console.log('taille non valide')
         document.getElementById('error-img').textContent = 'taille non valide'
         imgOk = false
         checkEntries()
         return false
     }
     if (!authorizedType.test(file.type)) {
-        console.log('type non valide')
         document.getElementById('error-img').textContent = 'type de fichier non valide'
         imgOk = false
         checkEntries()
@@ -53,7 +51,7 @@ createOptionsByCategories(categories)
   imgOk = true
   checkEntries()
   })
-
+// fonction qui change la couleur du bouton "valider" et qui enlèves les messages d'erreurs
   function checkEntries() {
     if (imgOk && titleOk && catOk) {
       document.getElementById('project-submit').disabled = false
@@ -66,7 +64,7 @@ createOptionsByCategories(categories)
      
     }
   }
-
+// fonction pour verifier si le titre est valide
 let title = document.getElementById('title')
   title.addEventListener('change', function() {
     
@@ -87,7 +85,6 @@ let title = document.getElementById('title')
       catOk = true 
     }else {
       catOk = false
-      console.log('pas de catégories sélectionnées')
       document.getElementById('error-category').textContent = 'aucune catégorie selectionnée'
      
     }
@@ -96,7 +93,7 @@ let title = document.getElementById('title')
 
 
 
-
+// fonction qui va ajouter le nouveau work sur la page index et aux niveaux des vignettes
 let form = document.getElementById('add-work-form')
 form.addEventListener('submit', function(e) {
   e.preventDefault()
@@ -105,7 +102,7 @@ form.addEventListener('submit', function(e) {
   const options = {
         method: "POST",
         headers: {
-          // accept: "application/json",
+          accept: "application/json",
           'Authorization': `Bearer ${token}`,
         },
         body: formData, 

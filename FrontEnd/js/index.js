@@ -1,9 +1,8 @@
-//récupération des travaux dans le fichier JSON
 
 let works_response = await fetch("http://localhost:5678/api/works");
 export let works = await works_response.json();
 
-
+// fonction qui affiche les works
 export function displayWorks(myWorks) {
   const portfolio = document.querySelector('.gallery')
   portfolio.innerHTML = ""
@@ -26,20 +25,18 @@ displayWorks(works)
 
 const loginBanner = document.getElementById("login-banner")
 const logoutLink = document.querySelector(".logout-link")
-const modificationArticle = document.getElementById("modification-article")
 const modificationProjet = document.getElementById("modification-projet")
 const modificationPhotoDeProfil = document.getElementById("modification-photo-de-profil")
 
 
 let categories_response = await fetch("http://localhost:5678/api/categories");
 export let categories = await categories_response.json();
-
+// si on a le token alors la bannière apparait ainsi que les boutons "modifier"
 if (sessionStorage.getItem("token")) {
 
   logoutLink.textContent = "logout"
   loginBanner.style.display = "flex"
   loginBanner.classList = "active"
-  modificationArticle.style.display = "block"
   modificationProjet.style.display = "block"
   modificationPhotoDeProfil.style.display = "block"
 
@@ -52,7 +49,7 @@ if (sessionStorage.getItem("token")) {
 } else {
 
 
-
+// on fait apparaitre les filtres
   
   categories.unshift({ id: 0, name: "tous" })
 

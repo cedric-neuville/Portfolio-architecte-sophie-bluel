@@ -4,6 +4,7 @@ const password = document.getElementById('password')
 const message = document.createElement('p')
 
 
+// fonction pour se connecter
 
 SubmitButton.addEventListener('click', async (event) =>{ 
     event.preventDefault()
@@ -28,6 +29,7 @@ SubmitButton.addEventListener('click', async (event) =>{
             message.innerText = 'Erreur dans l\'identifiant ou le mot de passe'
             document.getElementById('login-form').appendChild(message)              
     } else {
+        // on recupère le token
             message.innerText = ''
             const data = await res.json()
             const token = data.token
